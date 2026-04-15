@@ -1,8 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import SidebarCTA from '../components/SidebarCTA.astro';
+import RelatedProducts from '../components/RelatedProducts.astro';
 ---
 
-<Layout title="Harga Xpander Sleman 2026 | Promo DP Rendah – Mitsubishi Sleman" description="Harga dan promo Mitsubishi Xpander terbaru di Sleman Yogyakarta 2026. DP mulai 10%, kredit mudah, test drive door to door. Hubungi Putra – Sales Resmi Mitsubishi Sleman.">
+<Layout title="Harga Xpander Sleman 2026 | Promo DP Rendah – Mitsubishi Sleman" description="Harga dan promo Mitsubishi Xpander terbaru di Sleman Yogyakarta 2026. DP mulai 10%, kredit mudah, test drive door to door. Hubungi Putra – Sales Resmi Mitsubishi Sleman." image="/images/xpander-cross.webp">
     <Fragment slot="head">
         <script type="application/ld+json">
     {
@@ -36,15 +39,10 @@ import Layout from '../layouts/Layout.astro';
     </script>
     </Fragment>
 
-<div class="breadcrumb">
-        <div class="breadcrumb-inner">
-            <a href="/">Home</a>
-            <span>›</span>
-            <a href="/#products">Produk</a>
-            <span>›</span>
-            <span class="current">New Xpander Sleman</span>
-        </div>
-    </div>
+<Breadcrumb items={[
+    { label: "Produk", href: "/#products" },
+    { label: "New Xpander Sleman" }
+]} />
 
     <!-- Page Hero -->
     <div class="page-hero">
@@ -176,24 +174,15 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- Sidebar Sticky CTA -->
         <div class="product-sidebar">
-            <div class="cta-sticky">
-                <img src="/images/xpander.webp" alt="Xpander" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
-                <span class="price-label">Mulai dari</span>
-                <span class="price-main">Rp 350 Juta</span>
-                <p style="font-size: 0.82rem; color: var(--m-mid-grey);">OTR Yogyakarta 2026</p>
-                <a href="https://wa.me/628974362666?text=Halo%20Putra%2C%20saya%20tertarik%20Xpander%20di%20Sleman.%20Boleh%20info%20promo%20terkini%3F"
-                    class="cta-btn" id="wa-xpander-cta" target="_blank" rel="noopener">
-                    <i class="fab fa-whatsapp"></i> Chat Promo Xpander
-                </a>
-                <div class="wa-cta-block">
-                    ✓ Test Drive Door to Door<br>
-                    ✓ DP mulai 10%<br>
-                    ✓ Kredit diproses 1 hari
-                </div>
-                <a href="tel:+628974362666" style="display: block; text-align: center; margin-top: 14px; font-size: 0.88rem; color: var(--m-mid-grey);">
-                    <i class="fas fa-phone"></i> +62 897-4362-666
-                </a>
-            </div>
+            <SidebarCTA
+                image="/images/xpander.webp"
+                imageAlt="Xpander"
+                price="Rp 350 Juta"
+                waLink="https://wa.me/628974362666?text=Halo%20Putra%2C%20saya%20tertarik%20Xpander%20di%20Sleman.%20Boleh%20info%20promo%20terkini%3F"
+                waButtonText="Chat Promo Xpander"
+                ctaId="wa-xpander-cta"
+                features={["Test Drive Door to Door", "DP mulai 10%", "Kredit diproses 1 hari"]}
+            />
 
             <!-- Related Links -->
             <div class="sidebar-widget" style="margin-top: 1.5rem;">
@@ -215,29 +204,10 @@ import Layout from '../layouts/Layout.astro';
     </div>
 
     <!-- Related Products -->
-    <div class="related-strip">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <h2 class="section-title">Unit Lain yang Menarik</h2>
-            <div class="car-grid">
-                <div class="car-card">
-                    <img src="/images/pajero-sport.webp" alt="Pajero Sport Sleman" class="car-image" loading="lazy">
-                    <div class="car-details">
-                        <h3 class="car-title">Pajero Sport – Promo Bunga 0%</h3>
-                        <p class="car-price">Rp 799.000.000</p>
-                        <a href="/pajero-sport-sleman.html" class="cta-btn" style="display:block; text-align:center;">Lihat Detail</a>
-                    </div>
-                </div>
-                <div class="car-card">
-                    <img src="/images/xforce.webp" alt="Xforce Jogja" class="car-image" loading="lazy">
-                    <div class="car-details">
-                        <h3 class="car-title">New Xforce – Compact SUV</h3>
-                        <p class="car-price">Rp 428.500.000</p>
-                        <a href="/xforce-jogja.html" class="cta-btn" style="display:block; text-align:center;">Lihat Detail</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <RelatedProducts products={[
+        { title: "Pajero Sport – Promo Bunga 0%", price: "Rp 799.000.000", image: "/images/pajero-sport.webp", alt: "Pajero Sport Sleman", href: "/pajero-sport-sleman.html" },
+        { title: "New Xforce – Compact SUV", price: "Rp 428.500.000", image: "/images/xforce.webp", alt: "Xforce Jogja", href: "/xforce-jogja.html" }
+    ]} />
 
     <!-- Floating WhatsApp -->
     

@@ -6,13 +6,7 @@
 /* ---- Custom Font ---- */
 @font-face {
     font-family: 'MyCustomFont';
-    src: url('../fonts/MMC Regular.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'MyCustomFont';
-    src: url('../fonts/MMC Regular.woff') format('woff');
+    src: url('/fonts/MMC Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -204,7 +198,7 @@ nav {
    =================================================== */
 .hero {
     margin-top: 68px;
-    background: linear-gradient(rgba(0,0,0,0.68), rgba(0,0,0,0.68)), url('../images/hero-bg.webp');
+    background: linear-gradient(rgba(0,0,0,0.68), rgba(0,0,0,0.68)), url('/images/hero-bg.webp');
     background-size: cover;
     background-position: center;
     min-height: 82vh;
@@ -955,6 +949,55 @@ footer {
     padding: 3rem 20px;
 }
 .related-strip .section-title { margin-bottom: 2rem; font-size: 1.5rem; }
+.related-strip-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+/* ===================================================
+   SIDEBAR CTA COMPONENT
+   =================================================== */
+.cta-sticky__image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+.cta-sticky__promo-badge {
+    background: #fff0f0;
+    border-radius: 8px;
+    padding: 8px;
+    margin-bottom: 12px;
+    font-size: 0.82rem;
+    color: var(--m-red);
+    font-weight: 600;
+    text-align: center;
+}
+.cta-sticky__otr {
+    font-size: 0.82rem;
+    color: var(--m-mid-grey);
+}
+.cta-sticky__phone {
+    display: block;
+    text-align: center;
+    margin-top: 14px;
+    font-size: 0.88rem;
+    color: var(--m-mid-grey);
+}
+
+/* ===================================================
+   UTILITY: Block CTA Button
+   =================================================== */
+.cta-btn--block {
+    display: block;
+    text-align: center;
+}
+
+/* ===================================================
+   UTILITY: Sidebar Widget Spacing
+   =================================================== */
+.sidebar-widget + .sidebar-widget {
+    margin-top: 1.5rem;
+}
 
 /* ===================================================
    MOBILE RESPONSIVE

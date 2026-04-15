@@ -1,0 +1,48 @@
+---
+export interface Props {
+    image: string;
+    imageAlt: string;
+    price: string;
+    priceLabel?: string;
+    otrText?: string;
+    waLink: string;
+    waButtonText: string;
+    features: string[];
+    phone?: string;
+    ctaId?: string;
+    promoBadge?: string;
+}
+
+const {
+    image,
+    imageAlt,
+    price,
+    priceLabel = 'Mulai dari',
+    otrText = 'OTR Yogyakarta 2026',
+    waLink,
+    waButtonText,
+    features,
+    phone = '+62 897-4362-666',
+    ctaId,
+    promoBadge,
+} = Astro.props;
+---
+
+<div class="cta-sticky">
+    <img src={image} alt={imageAlt} class="cta-sticky__image">
+    {promoBadge && (
+        <div class="cta-sticky__promo-badge">{promoBadge}</div>
+    )}
+    <span class="price-label">{priceLabel}</span>
+    <span class="price-main">{price}</span>
+    <p class="cta-sticky__otr">{otrText}</p>
+    <a href={waLink} class="cta-btn" id={ctaId} target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i> {waButtonText}
+    </a>
+    <div class="wa-cta-block">
+        {features.map((f) => <Fragment set:html={`✓ ${f}<br>`} />)}
+    </div>
+    <a href={`tel:${phone.replace(/\s/g, '')}`} class="cta-sticky__phone">
+        <i class="fas fa-phone"></i> {phone}
+    </a>
+</div>

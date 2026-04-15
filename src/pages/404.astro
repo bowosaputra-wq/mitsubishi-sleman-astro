@@ -1,0 +1,110 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+    title="404 – Halaman Tidak Ditemukan | Mitsubishi Sleman"
+    description="Halaman yang Anda cari tidak ditemukan. Kembali ke beranda untuk melihat promo Mitsubishi terbaru di Sleman Yogyakarta."
+>
+    <div class="not-found-hero">
+        <div class="not-found-inner">
+            <div class="not-found-code">404</div>
+            <h1>Halaman Tidak Ditemukan</h1>
+            <p>Maaf, halaman yang Anda cari tidak ada atau telah dipindahkan.<br>
+               Jangan khawatir, Putra siap membantu Anda menemukan mobil yang tepat!</p>
+
+            <div class="not-found-actions">
+                <a href="/" class="cta-btn">
+                    <i class="fas fa-home"></i> Kembali ke Beranda
+                </a>
+                <a href="https://wa.me/628974362666?text=Halo%20Putra%2C%20saya%20butuh%20bantuan%20mencari%20informasi%20di%20website" 
+                   class="cta-btn cta-btn--outline" target="_blank" rel="noopener">
+                    <i class="fab fa-whatsapp"></i> Chat Putra
+                </a>
+            </div>
+
+            <div class="not-found-links">
+                <p>Atau langsung kunjungi halaman produk kami:</p>
+                <ul>
+                    <li><a href="/xpander-sleman.html">🚗 Harga Mitsubishi Xpander Sleman</a></li>
+                    <li><a href="/pajero-sport-sleman.html">🚙 Harga Pajero Sport Sleman</a></li>
+                    <li><a href="/xforce-jogja.html">🏎 Harga Xforce Jogja</a></li>
+                    <li><a href="/dealer-mitsubishi-sleman.html">🏢 Info Dealer Mitsubishi Sleman</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</Layout>
+
+<style>
+.not-found-hero {
+    margin-top: 68px;
+    min-height: calc(100vh - 68px - 240px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 20px;
+    background: linear-gradient(135deg, #fafafa 0%, #fff5f5 100%);
+}
+.not-found-inner {
+    max-width: 600px;
+    text-align: center;
+}
+.not-found-code {
+    font-size: 8rem;
+    font-weight: 900;
+    color: var(--m-red);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    opacity: 0.15;
+    font-family: var(--font-heading);
+    position: relative;
+}
+.not-found-inner h1 {
+    font-size: 2rem;
+    color: var(--m-black);
+    margin-bottom: 1rem;
+}
+.not-found-inner > p {
+    color: var(--m-mid-grey);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+.not-found-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+}
+.cta-btn--outline {
+    background: transparent;
+    color: var(--m-red);
+    border: 2px solid var(--m-red);
+}
+.cta-btn--outline:hover {
+    background: var(--m-red);
+    color: white;
+}
+.not-found-links p {
+    font-size: 0.9rem;
+    color: var(--m-mid-grey);
+    margin-bottom: 1rem;
+}
+.not-found-links ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.not-found-links a {
+    color: var(--m-red);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: opacity 0.2s;
+}
+.not-found-links a:hover {
+    opacity: 0.75;
+    text-decoration: underline;
+}
+</style>

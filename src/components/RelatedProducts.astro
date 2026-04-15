@@ -1,0 +1,33 @@
+---
+export interface RelatedProduct {
+    title: string;
+    price: string;
+    image: string;
+    alt: string;
+    href: string;
+}
+
+export interface Props {
+    products: RelatedProduct[];
+}
+
+const { products } = Astro.props;
+---
+
+<div class="related-strip">
+    <div class="related-strip-inner">
+        <h2 class="section-title">Unit Lain yang Menarik</h2>
+        <div class="car-grid">
+            {products.map((product) => (
+                <div class="car-card">
+                    <img src={product.image} alt={product.alt} class="car-image" loading="lazy">
+                    <div class="car-details">
+                        <h3 class="car-title">{product.title}</h3>
+                        <p class="car-price">{product.price}</p>
+                        <a href={product.href} class="cta-btn cta-btn--block">Lihat Detail</a>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</div>

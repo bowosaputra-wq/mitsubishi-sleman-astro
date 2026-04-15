@@ -2,9 +2,14 @@
 export interface Props {
 	title: string;
 	description: string;
+	image?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, image = '/images/hero-bg.webp' } = Astro.props;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
+const ogImageUrl = new URL(image, Astro.site).href;
+
+import '../styles/style.css';
 ---
 
 <!DOCTYPE html>
@@ -20,14 +25,14 @@ const { title, description } = Astro.props;
         content="mitsubishi sleman, mitsubishi jogja, promo xpander 2026, harga pajero sport sleman, kredit xforce jogja, sales mitsubishi terbaik, dealer mitsubishi yogyakarta">
     <meta name="author" content="Putra – Sales Mitsubishi Sleman">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://mitsubishi-sleman.online/">
+    <link rel="canonical" href={canonicalUrl}>
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Promo Mitsubishi Sleman - Dealer Resmi Yogyakarta">
-    <meta property="og:description" content="Dapatkan penawaran harga spesial untuk Xpander, Pajero Sport, Xforce, dan unit lainnya. Layanan door to door se-Sleman & Yogyakarta.">
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content={description}>
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mitsubishi-sleman.online/">
-    <meta property="og:image" content="https://mitsubishi-sleman.online/images/hero-bg.webp">
+    <meta property="og:url" content={canonicalUrl}>
+    <meta property="og:image" content={ogImageUrl}>
     <meta property="og:locale" content="id_ID">
 
     <!-- Favicon -->
@@ -39,8 +44,6 @@ const { title, description } = Astro.props;
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@500;700&display=swap"
         rel="stylesheet">
 
-    <!-- Berubah menjadi absolute path /css/style.css -->
-    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <script type="application/ld+json">
@@ -70,9 +73,9 @@ const { title, description } = Astro.props;
             <a href="/" class="logo">
                 <img src="/images/logo.png" alt="Logo Mitsubishi Sleman" style="height: 38px;">
             </a>
-            <div class="hamburger" id="hamburger-btn" aria-label="Menu">
-                <i class="fas fa-bars"></i>
-            </div>
+            <button class="hamburger" id="hamburger-btn" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="nav-links" type="button">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
             <ul class="nav-links" id="nav-links">
                 <li><a href="/">Home</a></li>
                 <li class="nav-dropdown">
@@ -116,10 +119,10 @@ const { title, description } = Astro.props;
             <div>
                 <div class="footer-heading">Produk</div>
                 <ul class="footer-links">
-                    <li><a href="/xpander-sleman">Xpander</a></li>
-                    <li><a href="/pajero-sport-sleman">Pajero Sport</a></li>
-                    <li><a href="/xforce-jogja">Xforce</a></li>
-                    <li><a href="#products">Semua Unit</a></li>
+                    <li><a href="/xpander-sleman.html">Xpander</a></li>
+                    <li><a href="/pajero-sport-sleman.html">Pajero Sport</a></li>
+                    <li><a href="/xforce-jogja.html">Xforce</a></li>
+                    <li><a href="/#products">Semua Unit</a></li>
                 </ul>
             </div>
             <div>

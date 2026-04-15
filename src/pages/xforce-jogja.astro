@@ -1,29 +1,32 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import SidebarCTA from '../components/SidebarCTA.astro';
+import RelatedProducts from '../components/RelatedProducts.astro';
 ---
 
-<Layout title="Harga Xforce Jogja 2026 | SUV Compact Terbaik – Mitsubishi Sleman" description="Harga dan promo Mitsubishi Xforce terbaru di Jogja &amp; Sleman 2026. Audio Yamaha Premium, sunroof, kredit mudah. Test drive door to door. Hubungi Putra Sales Mitsubishi.">
+<Layout title="Harga Xforce Jogja 2026 | SUV Compact Terbaik – Mitsubishi Sleman" description="Harga dan promo Mitsubishi Xforce terbaru di Jogja &amp; Sleman 2026. Audio Yamaha Premium, sunroof, kredit mudah. Test drive door to door. Hubungi Putra Sales Mitsubishi." image="/images/xforce.webp">
     <Fragment slot="head">
         <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Product",
-      "name": "Mitsubishi New Xforce 2026",
+      "name": "Mitsubishi XForce 2026",
       "image": "https://mitsubishi-sleman.online/images/xforce.webp",
-      "description": "Compact SUV futuristik dengan audio Yamaha Premium dan teknologi dynamic shield. Tersedia di Sleman &amp; Yogyakarta.",
+      "description": "Compact SUV premium dengan desain futuristik dan audio Yamaha. Tersedia di Sleman Yogyakarta melalui Putra Sales.",
       "brand": { "@type": "Brand", "name": "Mitsubishi" },
       "offers": [
         {
           "@type": "Offer",
-          "name": "Xforce GLS MT",
+          "name": "XForce Exceed CVT",
           "priceCurrency": "IDR",
-          "price": "374500000",
+          "price": "382500000",
           "availability": "https://schema.org/InStock",
           "seller": { "@type": "AutoDealer", "name": "Mitsubishi Sleman – Putra Sales", "url": "https://mitsubishi-sleman.online" }
         },
         {
           "@type": "Offer",
-          "name": "Xforce Ultimate AT",
+          "name": "XForce Ultimate CVT",
           "priceCurrency": "IDR",
           "price": "428500000",
           "availability": "https://schema.org/InStock",
@@ -34,23 +37,20 @@ import Layout from '../layouts/Layout.astro';
     </script>
     </Fragment>
 
-<div class="breadcrumb">
-        <div class="breadcrumb-inner">
-            <a href="/">Home</a><span>›</span>
-            <a href="/#products">Produk</a><span>›</span>
-            <span class="current">New Xforce Jogja</span>
-        </div>
-    </div>
+<Breadcrumb items={[
+    { label: "Produk", href: "/#products" },
+    { label: "Mitsubishi Xforce Jogja" }
+]} />
 
     <div class="page-hero">
         <h1>Harga Mitsubishi Xforce Jogja 2026</h1>
-        <p>Compact SUV Futuristik – Audio Yamaha Premium, Sunroof, Kredit Mudah di Sleman &amp; Yogyakarta</p>
+        <p>SUV Compact Paling Stylish. Promo DP Rendah &amp; Kredit Cepat se-Yogyakarta. Bawa Pulang XForce Impianmu!</p>
     </div>
 
     <div class="product-layout">
         <div class="product-main">
 
-            <img src="/images/xforce.webp" alt="Mitsubishi New Xforce 2026 Jogja Sleman" class="product-image-main">
+            <img src="/images/xforce.webp" alt="Mitsubishi Xforce Ultimate 2026 – Sleman Yogyakarta" class="product-image-main">
 
             <!-- Harga & Varian -->
             <div class="product-card">
@@ -65,19 +65,9 @@ import Layout from '../layouts/Layout.astro';
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Xforce GLS</td>
-                            <td>MT (Manual)</td>
-                            <td class="price-col">Rp 374.500.000</td>
-                        </tr>
-                        <tr>
-                            <td>Xforce GLS</td>
-                            <td>CVT (Otomatis)</td>
-                            <td class="price-col">Rp 388.500.000</td>
-                        </tr>
-                        <tr>
                             <td>Xforce Exceed</td>
                             <td>CVT</td>
-                            <td class="price-col">Rp 408.500.000</td>
+                            <td class="price-col">Rp 382.500.000</td>
                         </tr>
                         <tr style="background: #fff5f5;">
                             <td><strong>Xforce Ultimate</strong></td>
@@ -86,107 +76,88 @@ import Layout from '../layouts/Layout.astro';
                         </tr>
                     </tbody>
                 </table>
-                <p style="font-size: 0.82rem; color: var(--m-mid-grey); margin-top: 8px;">* Harga OTR Yogyakarta. Stok terbatas – hubungi Putra untuk konfirmasi ketersediaan unit.</p>
+                <p style="font-size: 0.82rem; color: var(--m-mid-grey); margin-top: 8px;">* Harga OTR Yogyakarta. Promo tambahan &amp; diskon akhir tahun? Langsung chat/telepon Putra!</p>
             </div>
 
             <!-- Spesifikasi -->
             <div class="product-card">
-                <h2>Spesifikasi Utama New Xforce</h2>
+                <h2>Canggihnya Fitur Xforce</h2>
                 <table class="spec-table">
-                    <tr><th>Mesin</th><td>1.499 cc MIVEC DOHC 16 valve</td></tr>
+                    <tr><th>Mesin</th><td>1.499 cc, MIVEC DOHC 16 Valve</td></tr>
                     <tr><th>Tenaga Maks</th><td>105 PS @ 6.000 rpm</td></tr>
                     <tr><th>Torsi Maks</th><td>141 Nm @ 4.000 rpm</td></tr>
-                    <tr><th>Transmisi</th><td>Manual 5-speed / INVECS-III CVT</td></tr>
+                    <tr><th>Transmisi</th><td>CVT dengan 4 Mode Berkendara</td></tr>
+                    <tr><th>Mode Berkendara</th><td>Normal, Wet, Gravel, Mud</td></tr>
+                    <tr><th>Audio</th><td>Yamaha Premium Sound (8 Speaker)</td></tr>
+                    <tr><th>Head Unit</th><td>12.3 inch Smartphone-link</td></tr>
+                    <tr><th>Ground Clearance</th><td>222 mm (Tertinggi di kelasnya!)</td></tr>
                     <tr><th>Kapasitas</th><td>5 Penumpang</td></tr>
-                    <tr><th>Ground Clearance</th><td>205 mm</td></tr>
-                    <tr><th>Konsumsi BBM</th><td>±15–17 km/L</td></tr>
-                    <tr><th>Dimensi (PxLxT)</th><td>4.390 × 1.810 × 1.640 mm</td></tr>
-                    <tr><th>Kapasitas Bagasi</th><td>358 L</td></tr>
-                    <tr><th>Bahan Bakar</th><td>Bensin (Pertamax dianjurkan)</td></tr>
+                    <tr><th>Rem</th><td>Cakram Depan &amp; Belakang + EPB</td></tr>
                 </table>
-                <div class="feature-pills" style="margin-top: 1rem;">
-                    <span class="feature-pill">Audio Yamaha 8 Speaker</span>
-                    <span class="feature-pill">Panoramic Sunroof</span>
-                    <span class="feature-pill">360° Monitor</span>
-                    <span class="feature-pill">Wireless Charger</span>
-                    <span class="feature-pill">Apple CarPlay</span>
-                    <span class="feature-pill">Android Auto</span>
-                    <span class="feature-pill">Lane Departure Warning</span>
-                    <span class="feature-pill">Auto High Beam</span>
+                <div class="feature-pills">
+                    <span class="feature-pill">Yamaha Sound System</span>
+                    <span class="feature-pill">Layar 12.3" Panel Touch</span>
+                    <span class="feature-pill">Drive Modes</span>
+                    <span class="feature-pill">Power Tailgate + Kick Sensor</span>
+                    <span class="feature-pill">Air Purifier NanoeX</span>
+                    <span class="feature-pill">Active Yaw Control (AYC)</span>
                 </div>
             </div>
 
             <!-- Simulasi Kredit -->
             <div class="product-card">
                 <h2>Simulasi Kredit Xforce Jogja</h2>
-                <p style="font-size: 0.9rem; margin-bottom: 1rem; color: var(--m-mid-grey);">Estimasi kredit Xforce Exceed CVT (OTR Rp 408.500.000), DP 20%:</p>
+                <p style="font-size: 0.9rem; margin-bottom: 1rem; color: var(--m-mid-grey);">Estimasi kredit Xforce Ultimate CVT (OTR Rp 428.500.000), DP 20%:</p>
                 <div class="kredit-grid">
                     <div class="kredit-card">
                         <div class="k-label">DP 20%</div>
-                        <div class="k-value">Rp 81,7 Jt</div>
-                        <div class="k-sub">Payable upfront</div>
+                        <div class="k-value">Rp 85,7 Jt</div>
+                        <div class="k-sub">Dari Total OTR</div>
                     </div>
                     <div class="kredit-card">
                         <div class="k-label">Cicilan/Bulan</div>
-                        <div class="k-value">~Rp 10,1 Jt</div>
+                        <div class="k-value">~Rp 10,4 Jt</div>
                         <div class="k-sub">Tenor 36 bulan</div>
                     </div>
                     <div class="kredit-card">
                         <div class="k-label">Cicilan/Bulan</div>
-                        <div class="k-value">~Rp 7,3 Jt</div>
+                        <div class="k-value">~Rp 7,6 Jt</div>
                         <div class="k-sub">Tenor 60 bulan</div>
                     </div>
                     <div class="kredit-card">
-                        <div class="k-label">DP Minimal</div>
-                        <div class="k-value">10%</div>
-                        <div class="k-sub">± Rp 40,8 Juta</div>
+                        <div class="k-label">Promo DP Ringan</div>
+                        <div class="k-value">Mulai 15%</div>
+                        <div class="k-sub">Silakan Konsultasi</div>
                     </div>
                 </div>
-                <p style="font-size: 0.82rem; color: var(--m-mid-grey); margin-top: 12px;">* Simulasi perkiraan. Hubungi Putra untuk penghitungan kredit pasti sesuai kebutuhan Anda.</p>
+                <p style="font-size: 0.82rem; color: var(--m-mid-grey); margin-top: 12px;">* Simulasi perkiraan. Hubungi Putra untuk hitungan pasti &amp; nego diskon maksimal.</p>
             </div>
 
-            <!-- Keunggulan -->
+            <!-- Review / About -->
             <div class="product-card">
-                <h2>Mengapa Xforce Cocok untuk Pengguna Jogja &amp; Sleman?</h2>
+                <h2>Ideal Untuk Kondisi Jalan Jogja</h2>
                 <ul class="about-list" style="margin-top: 0.5rem;">
-                    <li>Ukuran compact – mudah bermanuver di jalan sempit kota Yogyakarta &amp; sekitar UGM/UNY</li>
-                    <li>Ground clearance 205 mm – nyaman melewati jalan bergelombang khas Sleman Utara</li>
-                    <li>Audio Yamaha 8 speaker – pengalaman berkendara premium di jalur Jogja-Solo</li>
-                    <li>Sunroof panoramic – nikmati udara segar khas daerah Sleman sambil berkendara</li>
-                    <li>Desain Dynamic Shield – tampil standout di jalanan Jogja yang stylish</li>
+                    <li><strong>Ground Clearance 222 mm:</strong> Bebas cemas melewati jalan berlubang atau genangan air hujan di Jogja.</li>
+                    <li><strong>4 Mode Berkendara (Wet, Mud, Gravel, Normal):</strong> Sangat pas untuk menjelajah wisata alam Jogja dari pantai sampai gunung.</li>
+                    <li><strong>Yamaha Premium Sound:</strong> Macet di jalanan Malioboro tidak akan terasa membosankan.</li>
+                    <li><strong>Active Yaw Control (AYC):</strong> Tetap stabil bermanuver tajam.</li>
                 </ul>
-            </div>
-
-            <!-- Comparison teaser -->
-            <div style="background: #f0f8ff; border-radius: 12px; padding: 1.5rem; border: 1px solid #cce0ff;">
-                <h3 style="margin-bottom: 8px; font-size: 1.05rem;">🤔 Bingung Pilih Xpander atau Xforce?</h3>
-                <p style="font-size: 0.9rem; line-height: 1.7; margin-bottom: 12px;">Kami sudah buat perbandingan lengkap keduanya – dari kapasitas, harga kredit, hingga cocok untuk keluarga mana di Sleman.</p>
-                <a href="/blog/perbandingan-xpander-vs-xforce.html" class="cta-btn-outline">Baca Perbandingan Lengkap →</a>
             </div>
 
         </div>
 
-        <!-- Sidebar -->
         <div class="product-sidebar">
-            <div class="cta-sticky">
-                <img src="/images/xforce.webp" alt="Xforce Jogja" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
-                <span class="price-label">Mulai dari</span>
-                <span class="price-main">Rp 374,5 Juta</span>
-                <p style="font-size: 0.82rem; color: var(--m-mid-grey);">OTR Yogyakarta 2026</p>
-                <a href="https://wa.me/628974362666?text=Halo%20Putra%2C%20saya%20tertarik%20Xforce%20di%20Jogja.%20Boleh%20info%20promo%20terkini%3F"
-                    class="cta-btn" id="wa-xforce-cta" target="_blank" rel="noopener">
-                    <i class="fab fa-whatsapp"></i> Chat Promo Xforce
-                </a>
-                <div class="wa-cta-block">
-                    ✓ Test Drive Door to Door<br>
-                    ✓ DP mulai 10%<br>
-                    ✓ Kredit diproses 1 hari
-                </div>
-                <a href="tel:+628974362666" style="display: block; text-align: center; margin-top: 14px; font-size: 0.88rem; color: var(--m-mid-grey);">
-                    <i class="fas fa-phone"></i> +62 897-4362-666
-                </a>
-            </div>
+            <SidebarCTA
+                image="/images/xforce.webp"
+                imageAlt="Xforce"
+                price="Rp 382 Juta"
+                waLink="https://wa.me/628974362666?text=Halo%20Putra%2C%20Boleh%20minta%20brosur%20dan%20harga%20promo%20Xforce%20di%20Jogja%3F"
+                waButtonText="Tanya Promo Xforce"
+                ctaId="wa-xforce-cta"
+                features={["Test Drive Door to Door", "Audio Yamaha Premium", "Unit Ready Stock!"]}
+            />
 
+            <!-- Related Links -->
             <div class="sidebar-widget" style="margin-top: 1.5rem;">
                 <h3>Produk Lainnya</h3>
                 <ul class="sidebar-link-list">
@@ -198,37 +169,18 @@ import Layout from '../layouts/Layout.astro';
             <div class="sidebar-widget" style="margin-top: 1.5rem;">
                 <h3>Artikel Berguna</h3>
                 <ul class="sidebar-link-list">
-                    <li><a href="/blog/perbandingan-xpander-vs-xforce.html">Xpander vs XForce – Mana yang Lebih Cocok?</a></li>
-                    <li><a href="/blog/kredit-mitsubishi-sleman.html">Tips Kredit Mitsubishi Sleman 2026</a></li>
+                    <li><a href="/blog/perbandingan-xpander-vs-xforce.html">Baca: Xpander vs Xforce</a></li>
+                    <li><a href="/blog/kredit-mitsubishi-sleman.html">Tips Kredit Cepat Lolos</a></li>
                 </ul>
             </div>
         </div>
     </div>
 
     <!-- Related -->
-    <div class="related-strip">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <h2 class="section-title">Unit Lain yang Menarik</h2>
-            <div class="car-grid">
-                <div class="car-card">
-                    <img src="/images/xpander-cross.webp" alt="Xpander Cross Sleman" class="car-image" loading="lazy">
-                    <div class="car-details">
-                        <h3 class="car-title">New Xpander Cross – MPV Terlaris</h3>
-                        <p class="car-price">Rp 377.500.000</p>
-                        <a href="/xpander-sleman.html" class="cta-btn" style="display:block; text-align:center;">Lihat Detail</a>
-                    </div>
-                </div>
-                <div class="car-card">
-                    <img src="/images/pajero-sport.webp" alt="Pajero Sport Sleman" class="car-image" loading="lazy">
-                    <div class="car-details">
-                        <h3 class="car-title">Pajero Sport – Promo Bunga 0%</h3>
-                        <p class="car-price">Rp 799.000.000</p>
-                        <a href="/pajero-sport-sleman.html" class="cta-btn" style="display:block; text-align:center;">Lihat Detail</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <RelatedProducts products={[
+        { title: "New Xpander Cross", price: "Rp 377.500.000", image: "/images/xpander-cross.webp", alt: "Xpander Cross Sleman", href: "/xpander-sleman.html" },
+        { title: "Pajero Sport – Promo", price: "Rp 799.000.000", image: "/images/pajero-sport.webp", alt: "Pajero Sport Sleman", href: "/pajero-sport-sleman.html" }
+    ]} />
 
     
 </Layout>

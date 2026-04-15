@@ -1,269 +1,167 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 ---
 
-<Layout title="Dealer Mitsubishi Sleman | Sales Resmi Putra – Sun Star Motor Sleman" description="Dealer Mitsubishi Sleman resmi – Sun Star Motor Jl. Magelang Km. 14 (depan RSUD Sleman). Hubungi Putra, Sales Consultant terpercaya untuk pembelian unit baru dengan layanan door to door.">
+<Layout title="Dealer Mitsubishi Sleman | Sales Resmi Putra – Sun Star Motor Sleman" description="Dealer Mitsubishi Sleman resmi – Sun Star Motor Jl. Magelang Km. 14 (depan RSUD Sleman). Hubungi Putra, Sales Consultant terpercaya untuk pembelian unit baru dengan layanan door to door." image="/images/sun-sleman.webp">
     <Fragment slot="head">
         <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": ["AutoDealer", "LocalBusiness"],
-      "name": "Mitsubishi Sleman – Putra Sales (Sun Star Motor)",
-      "description": "Sales Consultant resmi Mitsubishi di Sun Star Motor Sleman, Yogyakarta. Layanan pembelian unit baru, test drive door to door, kredit mudah se-Sleman, Yogyakarta, dan Bantul.",
+      "@type": "AutoDealer",
+      "name": "Mitsubishi Sleman - Sun Star Motor (Putra Sales)",
+      "image": "https://mitsubishi-sleman.online/images/sun-sleman.webp",
       "url": "https://mitsubishi-sleman.online",
       "telephone": "+628974362666",
-      "contactType": "Sales",
-      "image": "https://mitsubishi-sleman.online/images/sun-sleman.webp",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Jl. Magelang Km. 14",
+        "streetAddress": "Jl. Magelang km. 14, Medari, Triharjo",
         "addressLocality": "Sleman",
         "addressRegion": "Daerah Istimewa Yogyakarta",
-        "postalCode": "55515",
+        "postalCode": "55514",
         "addressCountry": "ID"
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": -7.6891,
-        "longitude": 110.3650
+        "latitude": -7.6975217,
+        "longitude": 110.337775
       },
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-          "opens": "08:00",
-          "closes": "17:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Saturday",
-          "opens": "08:00",
-          "closes": "14:00"
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "08:30",
+          "closes": "16:30"
         }
-      ],
-      "priceRange": "$$",
-      "currenciesAccepted": "IDR",
-      "paymentAccepted": "Cash, Credit, Leasing",
-      "areaServed": [
-        { "@type": "City", "name": "Sleman" },
-        { "@type": "City", "name": "Yogyakarta" },
-        { "@type": "City", "name": "Bantul" },
-        { "@type": "City", "name": "Magelang" }
-      ],
-      "employee": {
-        "@type": "Person",
-        "name": "Putra",
-        "jobTitle": "Sales Consultant",
-        "worksFor": { "@type": "Organization", "name": "Sun Star Motor Sleman" }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "reviewCount": "3",
-        "bestRating": "5"
-      }
+      ]
     }
     </script>
     </Fragment>
 
-<div class="breadcrumb">
-        <div class="breadcrumb-inner">
-            <a href="/">Home</a><span>›</span>
-            <span class="current">Dealer Mitsubishi Sleman</span>
-        </div>
-    </div>
+<Breadcrumb items={[
+    { label: "Dealer Mitsubishi Sleman" }
+]} />
 
+    <!-- Page Hero -->
     <div class="page-hero">
-        <h1>Dealer Mitsubishi Sleman – Putra Sales</h1>
-        <p>Sun Star Motor · Jl. Magelang Km. 14, Depan RSUD Sleman, Yogyakarta</p>
+        <h1>Dealer Resmi Mitsubishi Sleman</h1>
+        <p>Sun Star Motor Sleman – Pelayanan Pembelian Unit Baru Terbaik di Jogja bersama Putra.</p>
     </div>
 
+    <!-- Layout Dealer -->
     <div class="dealer-layout">
-
-        <!-- Main Content -->
-        <div>
-
-            <!-- Profil Dealer -->
+        <!-- Main Info -->
+        <div class="product-main">
+            <!-- Tentang Dealer -->
             <div class="product-card">
-                <h2>Tentang Dealer Kami</h2>
-                <div class="about-container">
-                    <div>
-                        <img src="/images/sun-sleman.webp" alt="Sales Mitsubishi Sleman Putra – Sun Star Motor" class="about-image">
-                    </div>
-                    <div>
-                        <h3 style="margin-bottom: 0.75rem;">Halo, Saya Putra!</h3>
-                        <p>Saya adalah <strong>Sales Consultant resmi Mitsubishi</strong> di Sun Star Motor Sleman, Yogyakarta. Dengan pengalaman melayani pelanggan di Sleman, Kota Yogyakarta, dan sekitarnya, saya hadir untuk membantu Anda mendapatkan mobil impian dengan proses yang mudah dan transparan.</p>
-                        <p style="margin-top: 0.75rem;">Saya percaya bahwa membeli mobil adalah keputusan besar, karena itu saya selalu mendampingi Anda dari awal — mulai dari konsultasi, pemilihan unit, simulasi kredit, hingga mobil tiba di depan rumah Anda.</p>
-                        <ul class="about-list" style="margin-top: 1rem;">
-                            <li>Sales Consultant Resmi Mitsubishi Motors Indonesia</li>
-                            <li>Spesialisasi wilayah Sleman &amp; Yogyakarta</li>
-                            <li>Fast Response via WhatsApp 24 Jam</li>
-                            <li>KTP Jogja &amp; Jawa Tengah dilayani</li>
-                        </ul>
-                        <a href="https://wa.me/628974362666?text=Halo%20Putra%2C%20saya%20ingin%20konsultasi%20pembelian%20Mitsubishi"
-                           class="cta-btn" target="_blank" rel="noopener" style="display: inline-block; margin-top: 1.25rem;">
-                           <i class="fab fa-whatsapp"></i> Hubungi Putra Sekarang
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Info Boxes -->
-            <div class="info-box-grid" style="margin: 0 0 1.5rem;">
-                <div class="info-box">
-                    <div class="info-box-icon">📍</div>
-                    <div>
-                        <div class="info-box-title">Lokasi Dealer</div>
-                        <div class="info-box-text">Sun Star Motor<br>Jl. Magelang Km. 14<br>Sleman, DIY 55515<br>(Depan RSUD Sleman)</div>
-                    </div>
-                </div>
-                <div class="info-box">
-                    <div class="info-box-icon">🕐</div>
-                    <div>
-                        <div class="info-box-title">Jam Operasional</div>
-                        <div class="info-box-text">
-                            <table class="jam-ops-table">
-                                <tr><td>Senin – Jumat</td><td class="status-open">08.00 – 17.00</td></tr>
-                                <tr><td>Sabtu</td><td class="status-open">08.00 – 14.00</td></tr>
-                                <tr><td>Minggu / Libur</td><td>Konso WA dulu</td></tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="info-box">
-                    <div class="info-box-icon">📞</div>
-                    <div>
-                        <div class="info-box-title">Kontak Langsung</div>
-                        <div class="info-box-text">
-                            <a href="https://wa.me/628974362666" style="color: var(--m-red); font-weight: 600;">+62 897-4362-666</a><br>
-                            (WhatsApp – Fast Response 24 Jam)<br><br>
-                            <a href="https://wa.me/628974362666?text=Halo%20Putra" target="_blank" rel="noopener" class="cta-btn" style="display:inline-block; font-size: 0.85rem; padding: 0.4rem 1rem;"><i class="fab fa-whatsapp"></i> Chat Sekarang</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="info-box">
-                    <div class="info-box-icon">🚗</div>
-                    <div>
-                        <div class="info-box-title">Area Layanan</div>
-                        <div class="info-box-text">Sleman · Kota Yogyakarta · Bantul · Kulonprogo · Magelang · Klaten · Solo (KTP Jateng)</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Google Maps -->
-            <div class="product-card">
-                <h2>Lokasi &amp; Peta</h2>
-                <p style="margin-bottom: 1rem; font-size: 0.92rem; color: var(--m-mid-grey);">
-                    <i class="fas fa-map-marker-alt" style="color: var(--m-red);"></i>
-                    Sun Star Motor – Jl. Magelang Km. 14, Sleman (Depan RSUD Sleman), DIY
+                <h2>Sun Star Motor Sleman</h2>
+                <img src="/images/sun-sleman.webp" alt="Showroom Dealer Mitsubishi Sun Star Motor Sleman" style="width: 100%; border-radius: 8px; margin-bottom: 1rem; box-shadow: var(--shadow);">
+                <p style="line-height: 1.8; color: var(--m-dark-grey); margin-bottom: 1rem;">
+                    Selamat datang di dealer resmi <strong>Mitsubishi Sun Star Motor Sleman</strong>. Berlokasi strategis di Jl. Magelang Km. 14 (tepat di depan RSUD Sleman), kami siap melayani warga Kabupaten Sleman dan seluruh area Daerah Istimewa Yogyakarta untuk mewujudkan mobil impian Anda.
                 </p>
+                <p style="line-height: 1.8; color: var(--m-dark-grey);">
+                    Fasilitas kami berstandar internasional (3S: Sales, Service, Sparepart), memastikan Anda mendapatkan pengalaman terbaik mulai dari test drive, pemilihan unit, proses kredit yang dibantu penuh, hingga layanan purna jual. Konsultasikan kebutuhan Anda bersama <strong>Putra</strong>, Sales Consultant Mitsubishi berpengalaman yang akan melayani Anda secara door-to-door.
+                </p>
+            </div>
+
+            <!-- Layanan Kami -->
+            <div class="product-card">
+                <h2>Fasilitas &amp; Layanan Kami</h2>
+                <div class="info-box-grid">
+                    <div class="info-box">
+                        <i class="fas fa-car info-box-icon" style="color: var(--m-red);"></i>
+                        <div>
+                            <div class="info-box-title">Showroom &amp; Sales</div>
+                            <div class="info-box-text">Display unit lengkap Xpander, Xforce, Pajero Sport, truk Fuso &amp; Colt Diesel (L300). Proses cepat.</div>
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <i class="fas fa-tools info-box-icon" style="color: var(--m-red);"></i>
+                        <div>
+                            <div class="info-box-title">Bengkel Resmi (Service)</div>
+                            <div class="info-box-text">Mekanik bersertifikat Mitsubishi, ruang tunggu super nyaman b-AC plus snack gratis.</div>
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <i class="fas fa-cogs info-box-icon" style="color: var(--m-red);"></i>
+                        <div>
+                            <div class="info-box-title">Suku Cadang (Sparepart)</div>
+                            <div class="info-box-text">Hanya menyediakan sparepart asli (Mitsubishi Genuine Parts) untuk performa awet.</div>
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <i class="fas fa-home info-box-icon" style="color: var(--m-red);"></i>
+                        <div>
+                            <div class="info-box-title">Test Drive ke Rumah</div>
+                            <div class="info-box-text">Sibuk? Putra akan bawakan unit test drive langsung ke rumah atau kantor Anda di Sleman.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Peta Lokasi -->
+            <div class="product-card">
+                <h2>Peta Lokasi Kami</h2>
+                <p style="font-size: 0.95rem; color: var(--m-dark-grey); margin-bottom: 12px;"><strong>Alamat:</strong> Jl. Magelang km. 14, Medari, Triharjo, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55514 (Depan RSUD Sleman)</p>
                 <div class="map-container">
-                    <iframe
-                        src="https://maps.google.com/maps?q=Sun+Star+Motor+Sleman+Jl+Magelang+Km+14&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Lokasi Dealer Mitsubishi Sleman – Sun Star Motor Jl. Magelang Km 14">
-                    </iframe>
-                </div>
-                <p style="font-size: 0.85rem; color: var(--m-mid-grey); margin-top: 10px;">
-                    <strong>Cara ke Sini:</strong> Dari Ring Road Utara Jogja, ambil Jalan Magelang ke arah Utara. Dealer berada di Km 14, tepat di depan RSUD Sleman.
-                </p>
-            </div>
-
-            <!-- Layanan -->
-            <div class="product-card">
-                <h2>Layanan Kami</h2>
-                <div class="car-grid" style="gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-                    <div style="background: var(--m-light-grey); border-radius: 10px; padding: 1.25rem; text-align: center;">
-                        <div style="font-size: 2.2rem; margin-bottom: 8px;">🏠</div>
-                        <div style="font-weight: 700; margin-bottom: 4px;">Door to Door</div>
-                        <div style="font-size: 0.85rem; color: var(--m-mid-grey);">Test drive langsung ke rumah Anda di Sleman &amp; sekitarnya</div>
-                    </div>
-                    <div style="background: var(--m-light-grey); border-radius: 10px; padding: 1.25rem; text-align: center;">
-                        <div style="font-size: 2.2rem; margin-bottom: 8px;">💳</div>
-                        <div style="font-weight: 700; margin-bottom: 4px;">Bantu Kredit</div>
-                        <div style="font-size: 0.85rem; color: var(--m-mid-grey);">Proses leasing diurus sampai approve, pilihan tenor 12–60 bulan</div>
-                    </div>
-                    <div style="background: var(--m-light-grey); border-radius: 10px; padding: 1.25rem; text-align: center;">
-                        <div style="font-size: 2.2rem; margin-bottom: 8px;">💬</div>
-                        <div style="font-weight: 700; margin-bottom: 4px;">Konsultasi Gratis</div>
-                        <div style="font-size: 0.85rem; color: var(--m-mid-grey);">Diskusi kebutuhan mobil, budget, dan rekomendasi terbaik tanpa biaya</div>
-                    </div>
-                    <div style="background: var(--m-light-grey); border-radius: 10px; padding: 1.25rem; text-align: center;">
-                        <div style="font-size: 2.2rem; margin-bottom: 8px;">📋</div>
-                        <div style="font-weight: 700; margin-bottom: 4px;">Urus Surat</div>
-                        <div style="font-size: 0.85rem; color: var(--m-mid-grey);">STNK, BPKB, dan dokumen kendaraan diurus hingga selesai</div>
-                    </div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15814.739665977322!2d110.32747515000001!3d-7.6975217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5facafffffeb%3A0xc6cb5dae9ca2a5ab!2sDealer%20Mitsubishi%20Sun%20Star%20Motor%20Sleman!5e0!3m2!1sen!2sid!4v1700450000000!5m2!1sen!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
-
-            <!-- Testimoni -->
-            <div class="product-card">
-                <h2>Ulasan Pelanggan</h2>
-                <div class="testimonial-grid" style="margin-top: 1rem;">
-                    <div class="testimonial-card">
-                        <div class="testimonial-stars">★★★★★</div>
-                        <p class="testimonial-text">Proses pembelian Xpander Cross sangat mudah. Putra datang ke rumah untuk test drive. Mobil dikirim tepat waktu!</p>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">B</div>
-                            <div>
-                                <div class="testimonial-name">Bapak Budi S.</div>
-                                <div class="testimonial-location">Mlati, Sleman – Xpander Cross 2026</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-stars">★★★★★</div>
-                        <p class="testimonial-text">Creditnya diurus semua sama Putra. Saya tinggal tandatangan. DP ringan, cicilan sesuai kemampuan. Recommended!</p>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">R</div>
-                            <div>
-                                <div class="testimonial-name">Ibu Ratna K.</div>
-                                <div class="testimonial-location">Depok, Sleman – Pajero Sport Dakar</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
 
-        <!-- Sidebar -->
-        <div>
-            <div class="cta-sticky" style="top: 88px;">
-                <div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 4px;">Hubungi Putra</div>
-                <div style="font-size: 0.85rem; color: var(--m-mid-grey); margin-bottom: 1rem;">Sales Consultant Resmi Mitsubishi Sleman</div>
-                <a href="https://wa.me/628974362666?text=Halo%20Putra%2C%20saya%20ingin%20konsultasi%20beli%20Mitsubishi%20di%20Sleman"
-                    class="cta-btn" target="_blank" rel="noopener" style="display: block; text-align: center; padding: 0.9rem; font-size: 1.05rem;">
-                    <i class="fab fa-whatsapp"></i> Chat WhatsApp
-                </a>
-                <div class="wa-cta-block" style="margin-top: 1rem; text-align: left;">
-                    <strong>📍 Lokasi:</strong><br>Sun Star Motor<br>Jl. Magelang Km. 14, Sleman<br>(Depan RSUD Sleman)<br><br>
-                    <strong>🕐 Jam:</strong><br>
-                    Sen–Jum: 08.00–17.00<br>
-                    Sabtu: 08.00–14.00
+        <!-- Sidebar Contact Info -->
+        <div class="product-sidebar">
+            <div class="sidebar-widget">
+                <h3 style="display: flex; align-items: center; gap: 8px;">
+                    <i class="fas fa-user-circle" style="color: var(--m-red); font-size: 1.4rem;"></i>
+                    Sales Consultant
+                </h3>
+                <div style="text-align: center; padding: 1rem 0;">
+                    <img src="/images/putra-sales-bg.webp" alt="Putra Sales Mitsubishi Sleman" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid var(--m-red); margin-bottom: 12px;">
+                    <h4 style="font-size: 1.2rem; color: var(--m-black);">Putra</h4>
+                    <p style="font-size: 0.9rem; color: var(--m-mid-grey); margin-top: 4px;">Sales Resmi Mitsubishi Sleman</p>
                 </div>
+                <a href="https://wa.me/628974362666?text=Halo%20Putra%2C%20saya%20mau%20konsultasi%20pembelian%20mobil%20Mitsubishi%20di%20Sleman" class="cta-btn cta-btn--block" style="margin-top: 0.5rem;" target="_blank" rel="noopener">
+                    <i class="fab fa-whatsapp"></i> Chat Saya Sekarang
+                </a>
+                <a href="tel:+628974362666" class="cta-btn cta-btn--block" style="margin-top: 10px; background: white; color: var(--m-red); border: 1px solid var(--m-red);">
+                    <i class="fas fa-phone"></i> Hubungi 0897-4362-666
+                </a>
             </div>
 
             <div class="sidebar-widget" style="margin-top: 1.5rem;">
-                <h3>Produk Unggulan</h3>
-                <ul class="sidebar-link-list">
-                    <li><a href="/xpander-sleman.html">→ New Xpander Sleman</a></li>
-                    <li><a href="/pajero-sport-sleman.html">→ Pajero Sport Sleman</a></li>
-                    <li><a href="/xforce-jogja.html">→ New Xforce Jogja</a></li>
-                    <li><a href="/#products">→ Lihat Semua Unit</a></li>
-                </ul>
+                <h3>Jam Operasional</h3>
+                <p style="font-size: 0.85rem; color: var(--m-mid-grey); margin-bottom: 8px;">
+                    Buka untuk pelayanan di showroom bengkel:
+                </p>
+                <table class="jam-ops-table">
+                    <tr>
+                        <td>Senin - Jumat</td>
+                        <td>08:30 - 16:30</td>
+                    </tr>
+                    <tr>
+                        <td>Sabtu</td>
+                        <td>08:30 - 14:30</td>
+                    </tr>
+                    <tr>
+                        <td>Minggu/Libur</td>
+                        <td>Tutup (Bisa janjian luar jam buka)</td>
+                    </tr>
+                </table>
+                <p style="font-size: 0.8rem; color: var(--m-red); font-style: italic; margin-top: 12px; line-height: 1.5;">
+                    * Layanan konsultasi online / WhatsApp Putra Buka 24 Jam. Jangan ragu untuk chat kapanpun.
+                </p>
             </div>
+            
             <div class="sidebar-widget" style="margin-top: 1.5rem;">
-                <h3>Artikel</h3>
+                <h3>Pusat Promo Unit</h3>
                 <ul class="sidebar-link-list">
-                    <li><a href="/blog/kredit-mitsubishi-sleman.html">Tips Kredit Mitsubishi Sleman</a></li>
-                    <li><a href="/blog/perbandingan-xpander-vs-xforce.html">Xpander vs XForce</a></li>
+                    <li><a href="/xpander-sleman.html">→ Promo New Xpander</a></li>
+                    <li><a href="/xforce-jogja.html">→ Promo Xforce</a></li>
+                    <li><a href="/pajero-sport-sleman.html">→ Promo Pajero Sport</a></li>
                 </ul>
             </div>
         </div>
     </div>
-
     
 </Layout>
