@@ -29,8 +29,8 @@
     --transition: all 0.3s ease;
     --radius: 8px;
     --radius-lg: 12px;
-    --font-heading: 'Outfit', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
-    --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    --font-heading: 'MyCustomFont', 'Outfit', sans-serif;
+    --font-body: 'MyCustomFont', 'Inter', sans-serif;
     --max-width: 1200px;
 }
 
