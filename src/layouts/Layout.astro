@@ -5,10 +5,11 @@ export interface Props {
 	image?: string;
 }
 
-const { title, description, image = '/favicon.svg' } = Astro.props;
+const { title, description, image = '/images/hero-bg.webp' } = Astro.props;
 
 const rawPath = Astro.url.pathname;
-const normalizedPath = rawPath === '/' ? '/' : rawPath.replace(/\/$/, '');
+const normalizedPathRaw = rawPath === '/' ? '/' : rawPath.replace(/\/$/, '');
+const normalizedPath = normalizedPathRaw === '/index.html' ? '/' : normalizedPathRaw;
 const canonicalPath =
 	normalizedPath === '/' || normalizedPath.endsWith('.html')
 		? normalizedPath
@@ -53,7 +54,7 @@ import '../styles/style.css';
     <meta name="twitter:image" content={ogImageUrl}>
 
     <!-- Favicon -->
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/images/favicon.png" type="image/png">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -98,7 +99,7 @@ import '../styles/style.css';
       "name": "Mitsubishi Sleman – Putra Sales",
       "description": "Sales Consultant resmi Mitsubishi di Sleman, Yogyakarta.",
       "url": "https://mitsubishi-sleman.online",
-      "image": "https://mitsubishi-sleman.online/favicon.svg",
+      "image": "https://mitsubishi-sleman.online/images/sun-sleman.webp",
       "priceRange": "Rp 270.000.000 - Rp 799.000.000",
       "telephone": "+628974362666"
     }
@@ -116,7 +117,7 @@ import '../styles/style.css';
     <header>
         <nav>
             <a href="/" class="logo">
-                <span>Mitsubishi</span>&nbsp;Sleman
+                <img src="/images/logo.png" alt="Logo Mitsubishi Sleman" style="height: 38px;">
             </a>
             <button class="hamburger" id="hamburger-btn" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="nav-links" type="button">
                 <i class="fas fa-bars" aria-hidden="true"></i>

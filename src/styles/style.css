@@ -201,7 +201,7 @@ nav {
    =================================================== */
 .hero {
     margin-top: 68px;
-    background: linear-gradient(rgba(0,0,0,0.68), rgba(0,0,0,0.68));
+    background: linear-gradient(rgba(0,0,0,0.68), rgba(0,0,0,0.68)), url('/images/hero-bg.webp');
     background-size: cover;
     background-position: center;
     min-height: 82vh;
