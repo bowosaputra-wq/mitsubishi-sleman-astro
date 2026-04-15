@@ -4,7 +4,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://mitsubishi-sleman.online/sitemap.xml
+Sitemap: https://mitsubishi-sleman.online/sitemap-index.xml
 
 # Disallow non-essential paths (if any)
-# Disallow: /admin/
+Disallow: /admin/

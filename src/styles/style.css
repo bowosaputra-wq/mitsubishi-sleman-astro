@@ -3,12 +3,15 @@
    Domain: https://mitsubishi-sleman.online
    =================================================== */
 
-/* ---- Custom Font ---- */
+/* ---- Custom Font (optional) ----
+   Note: this file is referenced as `/fonts/MMC Regular.woff`.
+   If you don't ship it, we intentionally fall back to web/system fonts. */
 @font-face {
     font-family: 'MyCustomFont';
     src: url('/fonts/MMC Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 /* ---- Design Tokens ---- */
@@ -26,8 +29,8 @@
     --transition: all 0.3s ease;
     --radius: 8px;
     --radius-lg: 12px;
-    --font-heading: 'MyCustomFont', 'Outfit', sans-serif;
-    --font-body: 'MyCustomFont', 'Inter', sans-serif;
+    --font-heading: 'Outfit', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
     --max-width: 1200px;
 }
 
@@ -198,7 +201,7 @@ nav {
    =================================================== */
 .hero {
     margin-top: 68px;
-    background: linear-gradient(rgba(0,0,0,0.68), rgba(0,0,0,0.68)), url('/images/hero-bg.webp');
+    background: linear-gradient(rgba(0,0,0,0.68), rgba(0,0,0,0.68));
     background-size: cover;
     background-position: center;
     min-height: 82vh;

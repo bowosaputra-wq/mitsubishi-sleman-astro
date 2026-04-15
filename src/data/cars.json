@@ -8,7 +8,7 @@
       "badges": [
         "NEW ARRIVAL"
       ],
-      "image": "/images/destinator.webp",
+      "image": "/images/placeholder.svg",
       "slug": "#"
     },
     {
@@ -19,7 +19,7 @@
       "badges": [
         "TERLARIS"
       ],
-      "image": "/images/xpander-cross.webp",
+      "image": "/images/placeholder.svg",
       "slug": "xpander-sleman.html"
     },
     {
@@ -28,7 +28,7 @@
       "price": "Rp 350.000.000",
       "description": "Kombinasi gaya dan fungsionalitas yang sempurna.",
       "badges": [],
-      "image": "/images/xpander.webp",
+      "image": "/images/placeholder.svg",
       "slug": "xpander-sleman.html"
     },
     {
@@ -39,7 +39,7 @@
       "badges": [
         "PROMO BUNGA 0%"
       ],
-      "image": "/images/pajero-sport.webp",
+      "image": "/images/placeholder.svg",
       "slug": "pajero-sport-sleman.html"
     },
     {
@@ -48,7 +48,7 @@
       "price": "Rp 270.000.000",
       "description": "Jagonya pikap, mesin lebih bertenaga dan irit.",
       "badges": [],
-      "image": "/images/l300.webp",
+      "image": "/images/placeholder.svg",
       "slug": "#"
     },
     {
@@ -57,7 +57,7 @@
       "price": "Rp 428.500.000",
       "description": "Compact SUV futuristik dengan audio Yamaha Premium.",
       "badges": [],
-      "image": "/images/xforce.webp",
+      "image": "/images/placeholder.svg",
       "slug": "xforce-jogja.html"
     },
     {
@@ -66,7 +66,7 @@
       "price": "Mulai Rp 420 Jutaan",
       "description": "Truk legendaris si Kepala Kuning. Tangguh dan Bertenaga.",
       "badges": [],
-      "image": "/images/product-FE-74-copy.webp",
+      "image": "/images/placeholder.svg",
       "slug": "#"
     }
   ]
