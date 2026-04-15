@@ -1,4 +1,5 @@
 #!/bin/bash
+cd "$(dirname "$0")"
 # ============================================================
 # sync_github.sh — Script sinkronisasi ke GitHub (Linux/macOS)
 # Versi bash dari sync_github.bat
