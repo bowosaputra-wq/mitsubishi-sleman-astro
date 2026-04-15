@@ -58,6 +58,9 @@ const { title, description } = Astro.props;
     
     <!-- Netlify Identity Widget (Wajib untuk CMS) -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+    <!-- Slot khusus untuk script Schema tambahan di halaman spesifik -->
+    <slot name="head" />
 </head>
 
 <body>
@@ -75,9 +78,9 @@ const { title, description } = Astro.props;
                 <li class="nav-dropdown">
                     <a href="#products" aria-haspopup="true">Produk</a>
                     <ul class="dropdown-menu">
-                        <li><a href="/xpander-sleman.html">New Xpander Sleman</a></li>
-                        <li><a href="/pajero-sport-sleman.html">Pajero Sport Sleman</a></li>
-                        <li><a href="/xforce-jogja.html">New Xforce Jogja</a></li>
+                        <li><a href="/xpander-sleman.html">New Xpander</a></li>
+                        <li><a href="/pajero-sport-sleman.html">New Pajero Sport</a></li>
+                        <li><a href="/xforce-jogja.html">New Xforce</a></li>
                         <li><a href="#products">Lihat Semua Unit</a></li>
                     </ul>
                 </li>
@@ -105,7 +108,7 @@ const { title, description } = Astro.props;
         <div class="footer-grid">
             <div class="footer-brand">
                 <a href="/" class="logo">
-                    <span style="color: #ff4d5e;">Mitsubishi</span>&nbsp;Sleman
+                    <span style="color: #ff4d5e;">Mitsubishi</span>&nbsp;Jogja
                 </a>
                 <p style="margin-top: 12px;">Sales Consultant Resmi Mitsubishi di Sleman, Yogyakarta. Melayani pembelian unit baru dengan layanan door to door se-DIY.</p>
                 <p style="margin-top: 8px;"><strong style="color: #fff;">Dealer:</strong> Sun Star Motor – Jl. Magelang Km. 14, Sleman</p>
@@ -113,9 +116,9 @@ const { title, description } = Astro.props;
             <div>
                 <div class="footer-heading">Produk</div>
                 <ul class="footer-links">
-                    <li><a href="/xpander-sleman">Xpander Sleman</a></li>
-                    <li><a href="/pajero-sport-sleman">Pajero Sport Sleman</a></li>
-                    <li><a href="/xforce-jogja">Xforce Jogja</a></li>
+                    <li><a href="/xpander-sleman">Xpander</a></li>
+                    <li><a href="/pajero-sport-sleman">Pajero Sport</a></li>
+                    <li><a href="/xforce-jogja">Xforce</a></li>
                     <li><a href="#products">Semua Unit</a></li>
                 </ul>
             </div>
