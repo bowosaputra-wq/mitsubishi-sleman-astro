@@ -1,11 +1,24 @@
 {
   "cars": [
     {
+      "id": "destinator",
+      "title": "New Destinator (DST)",
+      "price": "Mulai Rp 400.000.000",
+      "description": "The New SUV Concept. Gagah, futuristik, dan siap jadi pusat perhatian.",
+      "badges": [
+        "NEW ARRIVAL"
+      ],
+      "image": "/images/destinator.webp",
+      "slug": "#"
+    },
+    {
       "id": "xpander-cross",
       "title": "New Xpander Cross",
       "price": "Rp 377.500.000",
       "description": "MPV Tangguh dengan kenyamanan maksimal untuk keluarga Anda.",
-      "badges": ["TERLARIS"],
+      "badges": [
+        "TERLARIS"
+      ],
       "image": "/images/xpander-cross.webp",
       "slug": "xpander-sleman.html"
     },
@@ -23,18 +36,11 @@
       "title": "Pajero Sport",
       "price": "Rp 799.000.000",
       "description": "SUV Legendaris dengan performa dan kemewahan tingkat tinggi.",
-      "badges": ["PROMO BUNGA 0%"],
+      "badges": [
+        "PROMO BUNGA 0%"
+      ],
       "image": "/images/pajero-sport.webp",
       "slug": "pajero-sport-sleman.html"
-    },
-    {
-      "id": "destinator",
-      "title": "New Destinator (DST)",
-      "price": "Mulai Rp 400.000.000",
-      "description": "The New SUV Concept. Gagah, futuristik, dan siap jadi pusat perhatian.",
-      "badges": ["NEW ARRIVAL"],
-      "image": "/images/destinator.webp",
-      "slug": "#"
     },
     {
       "id": "l300",
