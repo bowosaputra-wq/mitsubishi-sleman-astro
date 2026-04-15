@@ -12,6 +12,10 @@ echo [2/3] Menyimpan snapshot perubahan (Commit)...
 git commit -m "Update otomatis dari Windows (Push via Script)"
 
 echo.
+echo [SINKRONISASI] Mengambil update terbaru dari CMS (Jika ada)...
+git pull origin main --no-edit
+
+echo.
 echo [3/3] Menerbangkan data ke Cloud GitHub🚀...
 git push
 
