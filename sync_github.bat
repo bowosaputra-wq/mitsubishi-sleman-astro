@@ -13,15 +13,15 @@ git commit -m "Update otomatis dari Windows (Push via Script)"
 
 echo.
 echo [SINKRONISASI] Mengambil update terbaru dari CMS (Jika ada)...
-git pull origin main --no-edit
+git pull --rebase origin main
 
 echo.
 echo [3/3] Menerbangkan data ke Cloud GitHub🚀...
-git push
+git push origin main
 
 echo.
 echo ===================================================
-echo DONE! Berhasil dikirim ke Server.
+echo DONE! Berhasil tersinkronisasi dengan Server.
 echo Netlify butuh sekitar 1-2 menit untuk men-deploy perubahan ini.
 echo ===================================================
 pause
