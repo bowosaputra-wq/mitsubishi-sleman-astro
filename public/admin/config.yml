@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: bowosaputra-wq/mitsubishi-sleman-astro
   branch: main
 
 media_folder: "public/images"
