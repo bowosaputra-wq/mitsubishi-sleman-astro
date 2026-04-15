@@ -1,0 +1,67 @@
+{
+  "cars": [
+    {
+      "id": "xpander-cross",
+      "title": "New Xpander Cross",
+      "price": "Rp 377.500.000",
+      "description": "MPV Tangguh dengan kenyamanan maksimal untuk keluarga Anda.",
+      "badges": ["TERLARIS"],
+      "image": "/images/xpander-cross.webp",
+      "slug": "xpander-sleman.html"
+    },
+    {
+      "id": "xpander",
+      "title": "New Xpander",
+      "price": "Rp 350.000.000",
+      "description": "Kombinasi gaya dan fungsionalitas yang sempurna.",
+      "badges": [],
+      "image": "/images/xpander.webp",
+      "slug": "xpander-sleman.html"
+    },
+    {
+      "id": "pajero",
+      "title": "Pajero Sport",
+      "price": "Rp 799.000.000",
+      "description": "SUV Legendaris dengan performa dan kemewahan tingkat tinggi.",
+      "badges": ["PROMO BUNGA 0%"],
+      "image": "/images/pajero-sport.webp",
+      "slug": "pajero-sport-sleman.html"
+    },
+    {
+      "id": "destinator",
+      "title": "New Destinator (DST)",
+      "price": "Mulai Rp 400.000.000",
+      "description": "The New SUV Concept. Gagah, futuristik, dan siap jadi pusat perhatian.",
+      "badges": ["NEW ARRIVAL"],
+      "image": "/images/destinator.webp",
+      "slug": "#"
+    },
+    {
+      "id": "l300",
+      "title": "New Colt L300",
+      "price": "Rp 270.000.000",
+      "description": "Jagonya pikap, mesin lebih bertenaga dan irit.",
+      "badges": [],
+      "image": "/images/l300.webp",
+      "slug": "#"
+    },
+    {
+      "id": "xforce",
+      "title": "New Xforce",
+      "price": "Rp 428.500.000",
+      "description": "Compact SUV futuristik dengan audio Yamaha Premium.",
+      "badges": [],
+      "image": "/images/xforce.webp",
+      "slug": "xforce-jogja.html"
+    },
+    {
+      "id": "canter",
+      "title": "Canter FE 74 HD",
+      "price": "Mulai Rp 420 Jutaan",
+      "description": "Truk legendaris si Kepala Kuning. Tangguh dan Bertenaga.",
+      "badges": [],
+      "image": "/images/product-FE-74-copy.webp",
+      "slug": "#"
+    }
+  ]
+}

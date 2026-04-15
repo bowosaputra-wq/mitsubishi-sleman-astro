@@ -1,0 +1,140 @@
+---
+import Layout from '../layouts/Layout.astro';
+import siteConfig from '../data/siteConfig.json';
+import carsData from '../data/cars.json';
+
+const { cars } = carsData;
+---
+
+<Layout title="Promo Mitsubishi Sleman - Harga Terbaik & Diskon Spesial 2026" description="Promo Mitsubishi Sleman & Jogja Terbaik 2026. Harga Kredit Xpander, Pajero Sport, XForce, L300.">
+    <!-- Hero Section -->
+    <section id="home" class="hero" aria-label="Banner Utama">
+        <div class="hero-content">
+            <h1>{siteConfig.hero.title}</h1>
+            <p>{siteConfig.hero.description}</p>
+            <div class="hero-badges">
+                <span class="hero-badge">✓ Door to Door Service</span>
+                <span class="hero-badge">✓ DP Mulai 10%</span>
+                <span class="hero-badge">✓ Proses 1 Hari</span>
+                <span class="hero-badge">✓ Fast Response 24 Jam</span>
+            </div>
+            <a href="#products" class="cta-btn" style="padding: 1rem 2.5rem; font-size: 1.15rem;">Lihat Unit Ready 🚗</a>
+        </div>
+    </section>
+
+    <!-- Promo Section -->
+    <section id="promo" class="promo-section" aria-label="Promo Spesial">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2 style="border-bottom: 2px solid rgba(255,255,255,0.4); display: inline-block; padding-bottom: 10px; margin-bottom: 1rem;">
+                {siteConfig.promo.title}
+            </h2>
+            <p style="font-size: 1.15rem; margin-top: 16px; opacity: 0.96;">
+                {siteConfig.promo.description}
+            </p>
+            <a href={`https://wa.me/${siteConfig.contact.whatsappNumber}?text=Halo%20saya%20mau%20klaim%20Promo%20Spesial`}
+                class="cta-btn"
+                style="background: white; color: var(--m-red); margin-top: 28px; display: inline-block; font-weight: bold; padding: 0.9rem 2rem; font-size: 1.05rem;">
+                Gaspol Ambil Promo 🚀
+            </a>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="products" class="section" aria-label="Unit Unggulan">
+        <h2 class="section-title">Unit Unggulan</h2>
+        <div class="car-grid">
+            {cars.map((car) => (
+                <div class="car-card">
+                    <img src={car.image} alt={car.title} class="car-image" loading="lazy" />
+                    <div class="car-details">
+                        {car.badges && car.badges.map((badge) => (
+                            <span class="car-badge">{badge}</span>
+                        ))}
+                        <h3 class="car-title">{car.title}</h3>
+                        <p class="car-price">{car.price}</p>
+                        <p>{car.description}</p>
+                        <br />
+                        {car.slug && car.slug !== "#" && (
+                            <a href={`/${car.slug}`} class="cta-btn-outline" style="display:block; text-align:center; margin-bottom: 8px;">Detail &amp; Spesifikasi</a>
+                        )}
+                        <a href={`https://wa.me/${siteConfig.contact.whatsappNumber}?text=${encodeURIComponent(siteConfig.contact.waMessageTemplate + ' Promo Spesial ' + car.title)}`}
+                            class="cta-btn" style="display:block; text-align:center;">Cek Promo 🏷️</a>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </section>
+
+    <!-- Info & Tips (SEO Articles) -->
+    <section id="tips" class="section-full" style="background-color: var(--m-light-grey);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 4rem 20px;">
+            <h2 class="section-title">Info &amp; Tips Mitsubishi</h2>
+            <div class="car-grid">
+                <!-- Tip 1 -->
+                <div class="car-card" style="padding: 1.75rem; text-align: left;">
+                    <div style="font-size: 2rem; margin-bottom: 10px;">⚙️</div>
+                    <h3 class="car-title" style="font-size: 1.15rem;">
+                        Keunggulan Mesin Pajero Sport Dakar
+                    </h3>
+                    <p style="font-size: 0.92rem; line-height: 1.7; margin-top: 8px;">Mesin diesel 4N15 MIVEC Turbocharged pada Pajero Sport Dakar menghasilkan tenaga 181 PS yang sangat responsif. Teknologi VGT optimal untuk tanjakan di area Jogja dan Sleman. Irit bahan bakar dan ramah lingkungan dengan standar Euro 4.</p>
+                    <a href="/pajero-sport-sleman.html" style="font-size: 0.88rem; font-weight: 600; margin-top: 12px; display: inline-block;">Lihat Detail Pajero Sport →</a>
+                </div>
+
+                <!-- Tip 2 -->
+                <div class="car-card" style="padding: 1.75rem; text-align: left;">
+                    <div style="font-size: 2rem; margin-bottom: 10px;">💰</div>
+                    <h3 class="car-title" style="font-size: 1.15rem;">Tips Kredit Xpander Murah</h3>
+                    <p style="font-size: 0.92rem; line-height: 1.7; margin-top: 8px;">Dapatkan simulasi kredit termurah untuk New Xpander dengan DP mulai 10%. Kami bekerjasama dengan leasing terpercaya (Dipo, BCA, Mandiri) untuk proses cepat 1 hari approve. Konsultasikan budget Anda sekarang.</p>
+                    <a href="/blog/kredit-mitsubishi-sleman.html" style="font-size: 0.88rem; font-weight: 600; margin-top: 12px; display: inline-block;">Baca Tips Kredit Lengkap →</a>
+                </div>
+
+                <!-- Tip 3 -->
+                <div class="car-card" style="padding: 1.75rem; text-align: left;">
+                    <div style="font-size: 2rem; margin-bottom: 10px;">🏠</div>
+                    <h3 class="car-title" style="font-size: 1.15rem;">Mengapa Beli di Mitsubishi Sleman?</h3>
+                    <p style="font-size: 0.92rem; line-height: 1.7; margin-top: 8px;">Kami memberikan layanan 'Door to Door' service untuk warga Sleman dan Yogyakarta. Test drive bisa diantar ke rumah. Diskon sparepart dan gratis jasa servis hingga 50.000 KM. Pelayanan ramah dan profesional 24 Jam.</p>
+                    <a href="/dealer-mitsubishi-sleman.html" style="font-size: 0.88rem; font-weight: 600; margin-top: 12px; display: inline-block;">Tentang Dealer Kami →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2 class="section-title">Kenapa Beli di Sini?</h2>
+        <div class="about-container">
+            <div>
+                <img src="/images/sun-sleman.webp" alt="Sales Mitsubishi Profesional Putra – Sleman Yogyakarta" class="about-image">
+            </div>
+            <div>
+                <h3>Pelayanan Profesional &amp; Terpercaya</h3>
+                <p style="margin-top: 1rem;">Halo, saya <strong>Putra</strong>, Sales Consultant resmi Mitsubishi di Sleman, Yogyakarta (Sun Star Motor – Jl. Magelang Km. 14).</p>
+                <p style="margin-top: 1rem;">Saya siap membantu Anda memiliki mobil impian dengan proses yang cepat, mudah, dan transparan. Dapatkan promo DP ringan, bunga rendah, dan bonus menarik khusus pemesanan bulan ini.</p>
+                <ul class="about-list" style="margin-top: 1.25rem;">
+                    <li><strong>Proses Kredit Dibantu Sampai Approve</strong> (Nego Sampai Deal)</li>
+                    <li><strong>Siap 24 Jam &amp; Fast Response</strong> via WhatsApp</li>
+                    <li>Support Leasing Lengkap: BCA, Mandiri, Adira, Maybank, dll.</li>
+                    <li>Layanan Home Service &amp; Test Drive Door to Door</li>
+                    <li>Melayani KTP Jogja, Sleman &amp; Jawa Tengah</li>
+                </ul>
+                <a href="/dealer-mitsubishi-sleman.html" class="cta-btn" style="display: inline-block; margin-top: 1.5rem;">Lihat Profil Dealer →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leasing Partners -->
+    <section id="leasing" class="section-full" style="text-align: center; padding: 3rem 20px 4rem; background: var(--m-white);">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title">Partner Pembiayaan Terpercaya</h2>
+            <div class="leasing-grid">
+                <img src="/images/Lising-Dipo-Star-Finance.webp" alt="Dipo Star Finance" class="leasing-logo" title="Dipo Star Finance">
+                <img src="/images/Lising-bca-finance.png" alt="BCA Finance" class="leasing-logo" title="BCA Finance" style="height: 30px;">
+                <img src="/images/Lising-Mandiri-Utama-Finance.png" alt="Mandiri Utama Finance" class="leasing-logo" title="Mandiri Utama Finance">
+                <img src="/images/Lising-Adira-Finance.webp" alt="Adira Finance" class="leasing-logo" title="Adira Finance">
+                <img src="/images/Lising-bri-finance.png" alt="BRI Finance" class="leasing-logo" title="BRI Finance">
+                <img src="/images/Lising-cimb-niaga.png" alt="CIMB Niaga Finance" class="leasing-logo" title="CIMB Niaga">
+                <img src="/images/Lising-Maybank.png" alt="Maybank Finance" class="leasing-logo" title="Maybank Finance">
+            </div>
+        </div>
+    </section>
+</Layout>
