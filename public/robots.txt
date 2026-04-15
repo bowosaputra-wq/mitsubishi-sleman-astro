@@ -1,0 +1,10 @@
+# robots.txt – mitsubishi-sleman.online
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://mitsubishi-sleman.online/sitemap.xml
+
+# Disallow non-essential paths (if any)
+# Disallow: /admin/
