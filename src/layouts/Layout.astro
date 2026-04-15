@@ -55,6 +55,9 @@ const { title, description } = Astro.props;
       "telephone": "+628974362666"
     }
     </script>
+    
+    <!-- Netlify Identity Widget (Wajib untuk CMS) -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 
 <body>
@@ -140,6 +143,18 @@ const { title, description } = Astro.props;
 
     <!-- Berubah menjadi absolute path /js/script.js -->
     <script is:inline src="/js/script.js"></script>
+
+    <script is:inline>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
 </body>
 
 </html>

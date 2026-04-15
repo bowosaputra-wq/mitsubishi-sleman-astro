@@ -2,12 +2,10 @@ backend:
   name: git-gateway
   branch: main
 
-# This specifies how the image references should be stored in the markdown/json
-media_folder: "public/images" 
+media_folder: "public/images"
 public_folder: "/images"
 
 collections:
-  # Konfigurasi Situs (Data Umum)
   - name: "config"
     label: "Pengaturan Website"
     delete: false
@@ -18,43 +16,47 @@ collections:
         label: "Teks Banner & Promo"
         name: "siteConfig"
         fields:
-          - {label: "Hero Title / Banner Utama", name: "hero.title", widget: "string"}
-          - {label: "Hero Description", name: "hero.description", widget: "text"}
-          - {label: "Promo Section Title", name: "promo.title", widget: "string"}
-          - {label: "Promo Description", name: "promo.description", widget: "text"}
-          - {label: "Nomor WhatsApp (Contoh: 628974362666)", name: "contact.whatsappNumber", widget: "string"}
+          - label: "Hero (Banner Utama)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Judul Banner", name: "title", widget: "string"}
+              - {label: "Deskripsi Banner", name: "description", widget: "text"}
+          - label: "Promo"
+            name: "promo"
+            widget: "object"
+            fields:
+              - {label: "Judul Promo", name: "title", widget: "string"}
+              - {label: "Deskripsi Promo", name: "description", widget: "text"}
+          - label: "Kontak"
+            name: "contact"
+            widget: "object"
+            fields:
+              - {label: "Nomor WhatsApp (Contoh: 628974362666)", name: "whatsappNumber", widget: "string"}
+              - {label: "Template Pesan WA", name: "waMessageTemplate", widget: "string"}
 
-  # Koleksi Daftar Mobil
-  - name: "cars"
-    label: "Katalog Mobil"
-    folder: "src/data" # Actually, for JSON Array, it's better to use file collection or folder approach.
-    # We will use folder with JSON files if we want multiple files, but since it's a single cars.json, we must use file collection.
-
-# Correction: Since cars.json is a single file containing an array, we define it inside files:
   - name: "catalog"
-    label: "Data Katalog"
+    label: "Katalog Mobil"
+    delete: false
+    editor:
+      preview: false
     files:
       - file: "src/data/cars.json"
         label: "Daftar Mobil Tersedia"
         name: "cars"
         fields:
           - label: "Mobil"
-            name: "cars" # This maps to the root array? Wait, Decap CMS needs an object if it's a list field.
-            
-            # Since Decap CMS reads JSON directly, if the root is an array, we must use a List widget at the root.
-            # But Decap expects JSON to be an object. So we should wrap cars.json in an object: { "cars": [ ... ] }
-            # Let's adjust cars.json first to be an object { "cars": [...] }
-            # Then the widget is list
+            name: "cars"
             widget: "list"
             fields:
+              - {label: "ID Unik (huruf kecil, tanpa spasi)", name: "id", widget: "string"}
               - {label: "Nama Mobil", name: "title", widget: "string"}
-              - {label: "ID Unik", name: "id", widget: "string"}
-              - {label: "Foto Unit", name: "image", widget: "image"}
               - {label: "Harga (Teks)", name: "price", widget: "string"}
-              - {label: "Deskripsi", name: "description", widget: "text"}
-              - {label: "Link Detail (opsional, misal: xpander-sleman.html)", name: "slug", widget: "string"}
-              - label: "Badge Promosi (misal: TERLARIS)"
+              - {label: "Deskripsi Singkat", name: "description", widget: "text"}
+              - {label: "Foto Unit", name: "image", widget: "image"}
+              - {label: "Link Detail (opsional, isi # jika tidak ada)", name: "slug", widget: "string"}
+              - label: "Badge Promosi"
                 name: "badges"
                 widget: "list"
                 required: false
-                field: {name: badge, label: Badge, widget: string}
+                field: {name: "badge", label: "Badge", widget: "string"}
