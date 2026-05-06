@@ -2,11 +2,35 @@
 import Layout from '../layouts/Layout.astro';
 import siteConfig from '../data/siteConfig.json';
 import carsData from '../data/cars.json';
+import galleryData from '../data/gallery.json';
+import faqData from '../data/faq.json';
+import leasingData from '../data/leasing.json';
 
 const { cars } = carsData;
+const galleryItems = galleryData.items || [];
+const faqItems = faqData.items || [];
+const leasingPartners = leasingData.partners || [];
+const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.answer,
+        },
+    })),
+};
 ---
 
-<Layout title="Promo Mitsubishi Sleman - Harga Terbaik & Diskon Spesial 2026" description="Promo Mitsubishi Sleman & Jogja Terbaik 2026. Harga Kredit Xpander, Pajero Sport, XForce, L300.">
+<Layout title="Promo Mitsubishi Jogja - Harga Terbaik Sleman & Yogyakarta 2026" description="Promo Mitsubishi Jogja & Sleman Terbaik 2026. Harga Kredit Xpander, Pajero Sport, XForce, L300 di Jogja. Dealer Resmi Mitsubishi Yogyakarta.">
+    {faqItems.length > 0 && (
+        <Fragment slot="head">
+            <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+        </Fragment>
+    )}
+
     <!-- Hero Section -->
     <section id="home" class="hero" aria-label="Banner Utama">
         <div class="hero-content">
@@ -22,30 +46,39 @@ const { cars } = carsData;
         </div>
     </section>
 
-    <!-- Promo Section -->
-    <section id="promo" class="promo-section" aria-label="Promo Spesial">
-        <div style="max-width: 900px; margin: 0 auto;">
-            <h2 style="border-bottom: 2px solid rgba(255,255,255,0.4); display: inline-block; padding-bottom: 10px; margin-bottom: 1rem;">
-                {siteConfig.promo.title}
-            </h2>
-            <p style="font-size: 1.15rem; margin-top: 16px; opacity: 0.96;">
-                {siteConfig.promo.description}
-            </p>
-            <a href={`https://wa.me/${siteConfig.contact.whatsappNumber}?text=Halo%20saya%20mau%20klaim%20Promo%20Spesial`}
-                class="cta-btn"
-                style="background: white; color: var(--m-red); margin-top: 28px; display: inline-block; font-weight: bold; padding: 0.9rem 2rem; font-size: 1.05rem;">
-                Gaspol Ambil Promo 🚀
-            </a>
+    <!-- Promo Section with Slider -->
+    <section id="promo" class={`promo-section ${siteConfig.promo.images && siteConfig.promo.images.length > 0 ? 'has-slider' : ''}`} aria-label="Promo Spesial">
+        <div class="promo-slider" id="promoSlider">
+            <div class="promo-slides">
+                {siteConfig.promo.images && siteConfig.promo.images.length > 0 ? (
+                    siteConfig.promo.images.map((img, index) => (
+                        <div class="promo-slide" data-index={index}>
+                            <img src={img.src} alt={img.alt || `Promo ${index + 1}`} class="promo-slide-image" loading="lazy" onerror="this.style.display='none'" />
+                        </div>
+                    ))
+                ) : (
+                    <div class="promo-slide">
+                        <div class="promo-slide-content">
+                            <h2>{siteConfig.promo.title}</h2>
+                            <p>{siteConfig.promo.description}</p>
+                            <a href={`https://wa.me/${siteConfig.contact.whatsappNumber}?text=Halo%20saya%20mau%20klaim%20Promo%20Spesial`} class="cta-btn" style="background: white; color: var(--m-red); margin-top: 28px; display: inline-block; font-weight: bold; padding: 0.9rem 2rem; font-size: 1.05rem;">Gaspol Ambil Promo 🚀</a>
+                        </div>
+                    </div>
+                )}
+            </div>
+            <button class="promo-arrow promo-arrow-left" id="promoArrowLeft" aria-label="Slide sebelumnya">&#10094;</button>
+            <button class="promo-arrow promo-arrow-right" id="promoArrowRight" aria-label="Slide berikutnya">&#10095;</button>
+            <div class="promo-dots" id="promoDots"></div>
         </div>
     </section>
 
     <!-- Featured Products -->
     <section id="products" class="section" aria-label="Unit Unggulan">
-        <h2 class="section-title">Unit Unggulan</h2>
+        <h2 class="section-title">Unit Unggulan Mitsubishi Jogja</h2>
         <div class="car-grid">
             {cars.map((car) => (
                 <div class="car-card">
-                    <img src={car.image} alt={car.title} class="car-image" loading="lazy" />
+                    <img src={car.image} alt={`Mitsubishi ${car.title} – Harga Terbaik Sleman 2026`} class="car-image" loading="lazy" />
                     <div class="car-details">
                         {car.badges && car.badges.map((badge) => (
                             <span class="car-badge">{badge}</span>
@@ -68,7 +101,7 @@ const { cars } = carsData;
     <!-- Info & Tips (SEO Articles) -->
     <section id="tips" class="section-full" style="background-color: var(--m-light-grey);">
         <div style="max-width: 1200px; margin: 0 auto; padding: 4rem 20px;">
-            <h2 class="section-title">Info &amp; Tips Mitsubishi</h2>
+            <h2 class="section-title">Info &amp; Tips Mitsubishi Jogja</h2>
             <div class="car-grid">
                 <!-- Tip 1 -->
                 <div class="car-card" style="padding: 1.75rem; text-align: left;">
@@ -107,9 +140,9 @@ const { cars } = carsData;
                 <img src="/images/sun-sleman.webp" alt="Sales Mitsubishi Profesional Putra – Sleman Yogyakarta" class="about-image">
             </div>
             <div>
-                <h3>Pelayanan Profesional &amp; Terpercaya</h3>
-                <p style="margin-top: 1rem;">Halo, saya <strong>Putra</strong>, Sales Consultant resmi Mitsubishi di Sleman, Yogyakarta (Sun Star Motor – Jl. Magelang Km. 14).</p>
-                <p style="margin-top: 1rem;">Saya siap membantu Anda memiliki mobil impian dengan proses yang cepat, mudah, dan transparan. Dapatkan promo DP ringan, bunga rendah, dan bonus menarik khusus pemesanan bulan ini.</p>
+                <h3>Pelayanan Profesional Mitsubishi Jogja</h3>
+                <p style="margin-top: 1rem;">Halo, saya Putra, Sales Consultant resmi Mitsubishi Jogja di Sleman, Yogyakarta (Sun Star Motor – Jl. Magelang Km. 14 depan RSUD Sleman).</p>
+                <p style="margin-top: 1rem;">Saya siap membantu Anda memiliki mobil impian dengan proses yang cepat, mudah, dan transparan. Dapatkan promo DP ringan, bunga rendah, dan bonus menarik khusus pemesanan bulan ini di Mitsubishi Jogja.</p>
                 <ul class="about-list" style="margin-top: 1.25rem;">
                     <li><strong>Proses Kredit Dibantu Sampai Approve</strong> (Nego Sampai Deal)</li>
                     <li><strong>Siap 24 Jam &amp; Fast Response</strong> via WhatsApp</li>
@@ -122,19 +155,55 @@ const { cars } = carsData;
         </div>
     </section>
 
-    <!-- Leasing Partners -->
-    <section id="leasing" class="section-full" style="text-align: center; padding: 3rem 20px 4rem; background: var(--m-white);">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <h2 class="section-title">Partner Pembiayaan Terpercaya</h2>
-            <div class="leasing-grid">
-                <img src="/images/Lising-Dipo-Star-Finance.webp" alt="Dipo Star Finance" class="leasing-logo" title="Dipo Star Finance">
-                <img src="/images/Lising-bca-finance.png" alt="BCA Finance" class="leasing-logo" title="BCA Finance" style="height: 30px;">
-                <img src="/images/Lising-Mandiri-Utama-Finance.png" alt="Mandiri Utama Finance" class="leasing-logo" title="Mandiri Utama Finance">
-                <img src="/images/Lising-Adira-Finance.webp" alt="Adira Finance" class="leasing-logo" title="Adira Finance">
-                <img src="/images/Lising-bri-finance.png" alt="BRI Finance" class="leasing-logo" title="BRI Finance">
-                <img src="/images/Lising-cimb-niaga.png" alt="CIMB Niaga Finance" class="leasing-logo" title="CIMB Niaga">
-                <img src="/images/Lising-Maybank.png" alt="Maybank Finance" class="leasing-logo" title="Maybank Finance">
+    {faqItems.length > 0 && (
+        <section id="faq" class="section faq-home" aria-label="Pertanyaan Umum Mitsubishi Jogja">
+            <h2 class="section-title">Pertanyaan Umum Mitsubishi Jogja</h2>
+            <div class="faq-list">
+                {faqItems.map((item) => (
+                    <div class="faq-item">
+                        <h3 class="faq-question">{item.question}</h3>
+                        <p class="faq-answer">{item.answer}</p>
+                    </div>
+                ))}
             </div>
+        </section>
+    )}
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section-full" style="background: var(--m-white); padding-top: 1rem;">
+        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+            <h2 class="section-title">Galeri Pelanggan Setia Mitsubishi</h2>
+            <p style="color: var(--m-mid-grey); margin-bottom: 2rem;">Bukti nyata kepercayaan pelanggan kepada layanan Sales Mitsubishi Sleman.</p>
+            <div class="gallery-grid">
+                {galleryItems.map((item) => (
+                    <div class="gallery-item">
+                        <img src={item.image} alt={item.alt || item.title} loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-text">{item.title}</div>
+                            {item.location && <div class="gallery-subtext">{item.location}</div>}
+                        </div>
+                    </div>
+                ))}
+            </div>
+            <a href="https://wa.me/628974362666?text=Halo%20saya%20tertarik%20dengan%20pelayanan%20Mitsubishi%20Sleman" class="cta-btn-outline" style="margin-top: 2.5rem;"><i class="fab fa-whatsapp"></i> Chat Sales Sekarang & Jadilah Bagian Dari Galeri Ini</a>
         </div>
     </section>
+
+    {leasingPartners.length > 0 && (
+        <section id="leasing" class="section-full leasing-section">
+            <div style="max-width: 1200px; margin: 0 auto;">
+                <h2 class="section-title">Partner Pembiayaan Mitsubishi Jogja</h2>
+                <div class="leasing-grid">
+                    {leasingPartners.map((partner) => (
+                        <div class="leasing-item">
+                            {partner.logo && (
+                                <img src={partner.logo} alt={partner.name} class="leasing-logo" title={partner.name} loading="lazy">
+                            )}
+                            <span class="leasing-name">{partner.name}</span>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    )}
 </Layout>

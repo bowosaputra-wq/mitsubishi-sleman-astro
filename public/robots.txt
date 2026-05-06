@@ -5,6 +5,7 @@ Allow: /
 
 # Sitemap location
 Sitemap: https://mitsubishi-sleman.online/sitemap-index.xml
+Sitemap: https://mitsubishi-sleman.online/sitemap-images.xml
 
 # Disallow non-essential paths (if any)
 Disallow: /admin/

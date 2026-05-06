@@ -1,40 +1,75 @@
 backend:
-  name: github
-  repo: bowosaputra-wq/mitsubishi-sleman-astro
+  name: git-gateway
   branch: main
 
-media_folder: "public/images"
-public_folder: "/images"
+local_backend: true
+publish_mode: editorial_workflow
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+site_url: "https://mitsubishi-sleman.online"
+display_url: "https://mitsubishi-sleman.online"
+logo_url: "/images/logo.png"
 
 collections:
-  - name: "config"
+  - name: "settings"
     label: "Pengaturan Website"
     delete: false
     editor:
       preview: false
     files:
-      - file: "src/data/siteConfig.json"
-        label: "Teks Banner & Promo"
-        name: "siteConfig"
+      - name: "site_config"
+        label: "Homepage, Promo, dan Kontak"
+        file: "src/data/siteConfig.json"
+        format: "json"
         fields:
-          - label: "Hero (Banner Utama)"
+          - label: "Banner Utama"
             name: "hero"
             widget: "object"
             fields:
-              - {label: "Judul Banner", name: "title", widget: "string"}
-              - {label: "Deskripsi Banner", name: "description", widget: "text"}
+              - label: "Judul Banner"
+                name: "title"
+                widget: "string"
+              - label: "Deskripsi Banner"
+                name: "description"
+                widget: "text"
+
           - label: "Promo"
             name: "promo"
             widget: "object"
             fields:
-              - {label: "Judul Promo", name: "title", widget: "string"}
-              - {label: "Deskripsi Promo", name: "description", widget: "text"}
-          - label: "Kontak"
+              - label: "Judul Promo"
+                name: "title"
+                widget: "string"
+              - label: "Deskripsi Promo"
+                name: "description"
+                widget: "text"
+              - label: "Gambar Promo Slider"
+                name: "images"
+                widget: "list"
+                required: false
+                summary: "{{fields.alt}}"
+                fields:
+                  - label: "Gambar"
+                    name: "src"
+                    widget: "image"
+                  - label: "Alt Text"
+                    name: "alt"
+                    widget: "string"
+                    required: false
+
+          - label: "Kontak WhatsApp"
             name: "contact"
             widget: "object"
             fields:
-              - {label: "Nomor WhatsApp (Contoh: 628974362666)", name: "whatsappNumber", widget: "string"}
-              - {label: "Template Pesan WA", name: "waMessageTemplate", widget: "string"}
+              - label: "Nomor WhatsApp"
+                name: "whatsappNumber"
+                widget: "string"
+                hint: "Gunakan format internasional tanpa +, contoh: 628974362666"
+              - label: "Template Pesan WA"
+                name: "waMessageTemplate"
+                widget: "string"
 
   - name: "catalog"
     label: "Katalog Mobil"
@@ -42,22 +77,158 @@ collections:
     editor:
       preview: false
     files:
-      - file: "src/data/cars.json"
-        label: "Daftar Mobil Tersedia"
-        name: "cars"
+      - name: "cars"
+        label: "Daftar Mobil di Homepage"
+        file: "src/data/cars.json"
+        format: "json"
         fields:
           - label: "Mobil"
             name: "cars"
             widget: "list"
+            summary: "{{fields.title}} - {{fields.price}}"
             fields:
-              - {label: "ID Unik (huruf kecil, tanpa spasi)", name: "id", widget: "string"}
-              - {label: "Nama Mobil", name: "title", widget: "string"}
-              - {label: "Harga (Teks)", name: "price", widget: "string"}
-              - {label: "Deskripsi Singkat", name: "description", widget: "text"}
-              - {label: "Foto Unit", name: "image", widget: "image"}
-              - {label: "Link Detail (opsional, isi # jika tidak ada)", name: "slug", widget: "string"}
+              - label: "ID Unik"
+                name: "id"
+                widget: "string"
+                hint: "Huruf kecil tanpa spasi, contoh: xpander"
+              - label: "Nama Mobil"
+                name: "title"
+                widget: "string"
+              - label: "Harga"
+                name: "price"
+                widget: "string"
+              - label: "Deskripsi Singkat"
+                name: "description"
+                widget: "text"
+              - label: "Foto Unit"
+                name: "image"
+                widget: "image"
+              - label: "Link Detail"
+                name: "slug"
+                widget: "string"
+                hint: "Contoh: xpander-sleman.html"
               - label: "Badge Promosi"
                 name: "badges"
                 widget: "list"
                 required: false
-                field: {name: "badge", label: "Badge", widget: "string"}
+                field:
+                  label: "Badge"
+                  name: "badge"
+                  widget: "string"
+
+  - name: "faq"
+    label: "FAQ"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "faq"
+        label: "Pertanyaan Umum"
+        file: "src/data/faq.json"
+        format: "json"
+        fields:
+          - label: "Daftar FAQ"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.question}}"
+            fields:
+              - label: "Pertanyaan"
+                name: "question"
+                widget: "string"
+              - label: "Jawaban"
+                name: "answer"
+                widget: "text"
+
+  - name: "leasing"
+    label: "Leasing / Finance"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "leasing"
+        label: "Partner Leasing"
+        file: "src/data/leasing.json"
+        format: "json"
+        fields:
+          - label: "Daftar Leasing"
+            name: "partners"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - label: "Nama Leasing"
+                name: "name"
+                widget: "string"
+              - label: "Logo"
+                name: "logo"
+                widget: "image"
+                required: false
+              - label: "Deskripsi"
+                name: "description"
+                widget: "text"
+                required: false
+
+  - name: "testimonials"
+    label: "Testimoni"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "testimonials"
+        label: "Daftar Testimoni"
+        file: "src/data/testimonials.json"
+        format: "json"
+        fields:
+          - label: "Testimoni"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.name}} - {{fields.unit}}"
+            fields:
+              - label: "Nama"
+                name: "name"
+                widget: "string"
+              - label: "Lokasi"
+                name: "location"
+                widget: "string"
+                required: false
+              - label: "Unit"
+                name: "unit"
+                widget: "string"
+                required: false
+              - label: "Pesan"
+                name: "message"
+                widget: "text"
+              - label: "Foto"
+                name: "image"
+                widget: "image"
+                required: false
+
+  - name: "gallery"
+    label: "Galeri"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "gallery"
+        label: "Galeri Pelanggan"
+        file: "src/data/gallery.json"
+        format: "json"
+        fields:
+          - label: "Foto Galeri"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}} - {{fields.location}}"
+            fields:
+              - label: "Foto"
+                name: "image"
+                widget: "image"
+              - label: "Alt Text SEO"
+                name: "alt"
+                widget: "string"
+                hint: "Contoh: Serah terima Mitsubishi Xpander di Sleman Yogyakarta"
+              - label: "Judul"
+                name: "title"
+                widget: "string"
+              - label: "Lokasi"
+                name: "location"
+                widget: "string"
+                required: false

@@ -14,6 +14,37 @@
     font-display: swap;
 }
 
+/* ---- Self-hosted Google Fonts (Inter & Outfit) ----
+   Eliminates external requests to fonts.googleapis.com */
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/inter-v20-latin-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/inter-v20-latin-600.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Outfit';
+    src: url('/fonts/outfit-v15-latin-500.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Outfit';
+    src: url('/fonts/outfit-v15-latin-700.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* ---- Design Tokens ---- */
 :root {
     --m-red: #E60012;
@@ -25,6 +56,7 @@
     --m-white: #ffffff;
     --m-border: #e0e0e0;
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.06);
     --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
     --transition: all 0.3s ease;
     --radius: 8px;
@@ -124,7 +156,7 @@ nav {
     font-size: 0.7rem;
 }
 .dropdown-menu {
-    display: none;
+    display: block;
     position: absolute;
     top: calc(100% + 8px);
     left: 0;
@@ -135,6 +167,19 @@ nav {
     border-top: 3px solid var(--m-red);
     z-index: 500;
     overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+}
+/* Invisible bridge to prevent dropdown from closing when mouse moves between trigger and menu */
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: 0;
+    right: 0;
+    height: 12px;
 }
 .dropdown-menu li { list-style: none; }
 .dropdown-menu a {
@@ -151,9 +196,21 @@ nav {
     color: var(--m-red);
     padding-left: 1.6rem;
 }
+.dropdown-header {
+    display: block;
+    padding: 0.85rem 1.25rem 0.35rem 1.25rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--m-mid-grey);
+    letter-spacing: 1px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #eaeaea;
+}
 .nav-dropdown:hover .dropdown-menu,
 .nav-dropdown.active .dropdown-menu {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 .hamburger {
@@ -167,7 +224,7 @@ nav {
 /* CTA Button */
 .cta-btn {
     background-color: var(--m-red);
-    color: var(--m-white);
+    color: #ffffff !important;
     padding: 0.55rem 1.2rem;
     border-radius: 4px;
     text-decoration: none;
@@ -177,7 +234,7 @@ nav {
 }
 .cta-btn:hover {
     background-color: var(--m-red-dark);
-    color: var(--m-white);
+    color: #ffffff !important;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(230, 0, 18, 0.35);
 }
@@ -598,6 +655,12 @@ nav {
 /* ===================================================
    LEASING PARTNERS
    =================================================== */
+.leasing-section {
+    text-align: center;
+    padding: 3rem 20px 4rem;
+    background: var(--m-white);
+}
+
 .leasing-grid {
     display: flex;
     justify-content: center;
@@ -606,9 +669,20 @@ nav {
     margin-top: 2rem;
     align-items: center;
 }
+
+.leasing-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-width: 130px;
+}
+
 .leasing-logo {
     height: 40px;
-    width: auto;
+    max-width: 150px;
+    width: 100%;
     object-fit: contain;
     filter: grayscale(100%);
     opacity: 0.6;
@@ -620,6 +694,12 @@ nav {
     transform: scale(1.1);
 }
 
+.leasing-name {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--m-mid-grey);
+}
+
 /* ===================================================
    PROMO BANNER
    =================================================== */
@@ -629,9 +709,131 @@ nav {
     text-align: center;
     padding: 3.5rem 20px;
 }
+.promo-section.has-slider {
+    background-color: transparent;
+    padding: 2rem 20px;
+}
 .promo-section h2 {
     color: white;
     font-size: 2rem;
+}
+
+/* ===================================================
+   PROMO SLIDER
+   =================================================== */
+.promo-slider {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Adjust for 16:9 aspect ratio */
+@media (max-width: 1200px) {
+    .promo-slider {
+        max-width: 800px;
+    }
+    .promo-slide-image {
+        height: 450px; /* 800px * 9/16 */
+    }
+}
+
+@media (max-width: 900px) {
+    .promo-slider {
+        max-width: 700px;
+    }
+    .promo-slide-image {
+        height: 394px; /* 700px * 9/16 */
+    }
+}
+.promo-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.promo-slide {
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.promo-slide-image {
+    width: 100%;
+    height: 506px; /* 900px * 9/16 = 506px for 16:9 */
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    background-color: #f0f0f0;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .promo-slide-image {
+        height: 284px; /* Maintain 16:9 aspect ratio on mobile */
+    }
+}
+.promo-slide-content {
+    padding: 2rem;
+    text-align: center;
+}
+.promo-slide-content h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.promo-slide-content p {
+    font-size: 1.15rem;
+    opacity: 0.96;
+    margin-bottom: 1rem;
+}
+.promo-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1rem 0.8rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 4px;
+    transition: var(--transition);
+    z-index: 10;
+}
+.promo-arrow:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+.promo-arrow-left {
+    left: 10px;
+}
+.promo-arrow-right {
+    right: 10px;
+}
+.promo-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+.promo-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.promo-dot.active {
+    background: white;
+    transform: scale(1.2);
+}
+.promo-dot:hover {
+    background: rgba(255, 255, 255, 0.8);
 }
 
 /* ===================================================
@@ -720,6 +922,31 @@ nav {
     font-size: 0.98rem;
 }
 .faq-answer { font-size: 0.93rem; color: var(--m-dark-grey); line-height: 1.7; }
+
+.faq-home {
+    background: var(--m-light-grey);
+}
+
+.faq-home .faq-list {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-home .faq-item {
+    background: var(--m-white);
+    border: 1px solid var(--m-border);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.faq-home .faq-question {
+    font-size: 1rem;
+}
+
+.faq-home .faq-answer {
+    margin: 0;
+}
 
 /* ===================================================
    PRODUCT PAGE LAYOUT
@@ -1000,6 +1227,57 @@ footer {
    =================================================== */
 .sidebar-widget + .sidebar-widget {
     margin-top: 1.5rem;
+}
+
+/* ===================================================
+   DELIVERY GALLERY
+   =================================================== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+    margin-top: 1.5rem;
+}
+.gallery-item {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    aspect-ratio: 4/3;
+}
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.85));
+    color: white;
+    padding: 30px 15px 15px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: var(--transition);
+}
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+.gallery-text {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+.gallery-subtext {
+    font-size: 0.8rem;
+    color: #ffc107;
+    margin-top: 4px;
 }
 
 /* ===================================================

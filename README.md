@@ -132,4 +132,4 @@ sync_github.bat
 **Putra** — Sales Consultant Resmi Mitsubishi Sleman  
 📞 [+62 897-4362-666](tel:+628974362666)  
 💬 [WhatsApp](https://wa.me/628974362666)  
-📍 Sun Star Motor — Jl. Magelang Km. 14, Sleman, DIY
+📍 Sun Star Motor — Jl. Magelang Km. 14 (depan RSUD Sleman), Sleman, DIY

@@ -9,8 +9,29 @@ export interface Props {
 }
 
 const { items } = Astro.props;
+
+const site = 'https://mitsubishi-sleman.online';
+const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": site
+        },
+        ...items.map((item, index) => ({
+            "@type": "ListItem",
+            "position": index + 2,
+            "name": item.label,
+            ...(item.href ? { "item": `${site}${item.href}` } : {})
+        }))
+    ]
+};
 ---
 
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 <div class="breadcrumb">
     <div class="breadcrumb-inner">
         <a href="/">Home</a>

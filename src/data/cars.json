@@ -2,40 +2,20 @@
   "cars": [
     {
       "id": "destinator",
-      "title": "New Destinator (DST)",
+      "title": "Destinator",
       "price": "Mulai Rp 400.000.000",
-      "description": "The New SUV Concept. Gagah, futuristik, dan siap jadi pusat perhatian.",
+      "description": "Premium Family SUV. Mesin 1.5L Turbo 163 PS, 5 Drive Modes, Glass Roof, Mitsubishi Connect.",
       "badges": [
-        "NEW ARRIVAL"
+        "NEW Type"
       ],
       "image": "/images/destinator.webp",
-      "slug": "#"
-    },
-    {
-      "id": "xpander-cross",
-      "title": "New Xpander Cross",
-      "price": "Rp 377.500.000",
-      "description": "MPV Tangguh dengan kenyamanan maksimal untuk keluarga Anda.",
-      "badges": [
-        "TERLARIS"
-      ],
-      "image": "/images/xpander-cross.webp",
-      "slug": "xpander-sleman.html"
-    },
-    {
-      "id": "xpander",
-      "title": "New Xpander",
-      "price": "Rp 350.000.000",
-      "description": "Kombinasi gaya dan fungsionalitas yang sempurna.",
-      "badges": [],
-      "image": "/images/xpander.webp",
-      "slug": "xpander-sleman.html"
+      "slug": "destinator-sleman.html"
     },
     {
       "id": "pajero",
       "title": "Pajero Sport",
-      "price": "Rp 799.000.000",
-      "description": "SUV Legendaris dengan performa dan kemewahan tingkat tinggi.",
+      "price": "Rp 606.000.000 - Rp 799.000.000",
+      "description": "King of SUV diesel 181 PS. Mewah, tangguh, dilengkapi fitur keselamatan Diamond Sense.",
       "badges": [
         "PROMO BUNGA 0%"
       ],
@@ -43,31 +23,48 @@
       "slug": "pajero-sport-sleman.html"
     },
     {
-      "id": "l300",
-      "title": "New Colt L300",
-      "price": "Rp 270.000.000",
-      "description": "Jagonya pikap, mesin lebih bertenaga dan irit.",
-      "badges": [],
-      "image": "/images/L300.webp",
-      "slug": "#"
-    },
-    {
       "id": "xforce",
       "title": "New Xforce",
-      "price": "Rp 428.500.000",
-      "description": "Compact SUV futuristik dengan audio Yamaha Premium.",
-      "badges": [],
+      "price": "Rp 391.500.000 - Rp 433.500.000",
+      "description": "Compact SUV stylish dengan Yamaha Premium Sound, 4 mode berkendara, & fitur canggih.",
+      "badges": [
+        "Si Gesit"
+      ],
       "image": "/images/xforce.webp",
       "slug": "xforce-jogja.html"
     },
     {
+      "id": "xpander",
+      "title": "New Xpander",
+      "price": "Rp 276.000.000 - Rp 350.000.000",
+      "description": "MPV Favorit Keluarga. Kabin senyap, mesin 1.5L MIVEC 105 PS, fitur kenyamanan terbaik.",
+      "badges": [
+        "Terlaris"
+    ],
+      "image": "/images/xpander.webp",
+      "slug": "xpander-sleman.html"
+    },
+    {
       "id": "canter",
-      "title": "Canter FE 74 HD",
-      "price": "Mulai Rp 420 Jutaan",
-      "description": "Truk legendaris si Kepala Kuning. Tangguh dan Bertenaga.",
-      "badges": [],
-      "image": "/images/product-FE-74-copy.webp",
-      "slug": "#"
+      "title": "Mitsubishi Canter",
+      "price": "Mulai Rp 395.000.000",
+      "description": "Truk 'Kepala Kuning' legendaris. Mesin Euro 4 tangguh & irit, tersedia varian 4 ban dan 6 ban untuk segala bisnis.",
+      "badges": [
+        "Jagonya Bisnis"
+      ],
+      "image": "/images/canter.webp",
+      "slug": "canter-sleman.html"
+    },
+    {
+      "id": "l300",
+      "title": "New Colt L300",
+      "price": "Rp 265.500.000 - Rp 270.000.000",
+      "description": "Jagonya pikap legendaris mesin Euro 4. Tersedia varian Flat Deck dan Cab Chassis untuk kebutuhan bisnis Anda.",
+      "badges": [
+        "DP minim"
+      ],
+      "image": "/images/l300.webp",
+      "slug": "l300-sleman.html"
     }
   ]
 }

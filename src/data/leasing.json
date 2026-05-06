@@ -1,0 +1,19 @@
+{
+  "partners": [
+    {
+      "name": "Dipo Star Finance",
+      "logo": "/images/Lising-Dipo-Star-Finance.webp",
+      "description": "Partner pembiayaan resmi untuk pembelian kendaraan Mitsubishi."
+    },
+    {
+      "name": "BCA Finance",
+      "logo": "/images/Lising-bca-finance.png",
+      "description": "Pilihan leasing dengan berbagai skema tenor dan cicilan."
+    },
+    {
+      "name": "Adira Finance",
+      "logo": "/images/Lising-Adira-Finance.webp",
+      "description": "Partner pembiayaan untuk kebutuhan kredit kendaraan."
+    }
+  ]
+}

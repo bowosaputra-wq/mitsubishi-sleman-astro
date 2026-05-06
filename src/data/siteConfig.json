@@ -1,11 +1,17 @@
 {
   "hero": {
-    "title": "Promo Mitsubishi Terbaik di Yogyakarta",
-    "description": "Dapatkan penawaran harga spesial dari Sales Resmi Mitsubishi Sleman untuk Xpander, Pajero Sport, Canter, dan unit lainnya. Proses cepat, mudah, dan transparan. Melayani KTP Jogja & Jawa Tengah."
+    "title": "Promo Mitsubishi Jogja - Sleman Yogyakarta",
+    "description": "Dapatkan penawaran harga spesial dari Sales Resmi Mitsubishi Jogja di Sleman untuk Xpander, Pajero Sport, Canter, dan unit lainnya. Proses cepat, mudah, dan transparan. Melayani KTP Jogja & Jawa Tengah."
   },
   "promo": {
-    "title": "Promo Spesial Bulan Ini",
-    "description": "Dapatkan Bunga 0% hingga 1 tahun khusus pembelian Pajero Sport Dakar. Bonus Kaca Film V-Kool dan Karpet Dasar."
+    "title": "Promo Spesial Mitsubishi Jogja",
+    "description": "Dapatkan Bunga 0% hingga 1 tahun khusus pembelian Pajero Sport Dakar di Jogja. Bonus Kaca Film V-Kool dan Karpet Dasar. Promo Terbaik Mitsubishi Sleman Yogyakarta.",
+    "images": [
+      {
+        "src": "/images/promo-1.webp",
+        "alt": "Promo Spesial Mitsubishi Jogja 2026 – Bunga 0% Pilihan"
+      }
+    ]
   },
   "contact": {
     "whatsappNumber": "628974362666",

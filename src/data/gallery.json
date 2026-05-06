@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "image": "/images/xpander.webp",
+      "alt": "Serah terima Mitsubishi Xpander di Sleman Yogyakarta",
+      "title": "Serah Terima New Xpander",
+      "location": "Sleman, Yogyakarta"
+    },
+    {
+      "image": "/images/pajero-sport.webp",
+      "alt": "Delivery Mitsubishi Pajero Sport di Yogyakarta",
+      "title": "Delivery Pajero Sport Dakar",
+      "location": "Bantul, Yogyakarta"
+    },
+    {
+      "image": "/images/xforce.webp",
+      "alt": "Serah terima Mitsubishi Xforce di Jogja",
+      "title": "Serah Terima New Xforce",
+      "location": "Jogja"
+    },
+    {
+      "image": "/images/l300.webp",
+      "alt": "Pengiriman Mitsubishi Colt L300 untuk usaha",
+      "title": "Unit Usaha New Colt L300",
+      "location": "Kulon Progo"
+    }
+  ]
+}
