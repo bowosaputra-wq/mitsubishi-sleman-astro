@@ -3,6 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import SidebarCTA from '../components/SidebarCTA.astro';
 import RelatedProducts from '../components/RelatedProducts.astro';
+import carsData from '../data/cars.json';
+
+const car = carsData.cars.find(c => c.id === 'xforce');
+const variants = car?.variants || [];
 ---
 
 <Layout title="Harga Xforce Jogja 2026 | SUV Compact Terbaik – Mitsubishi Sleman" description="Harga dan promo Mitsubishi Xforce terbaru di Jogja &amp; Sleman 2026. Audio Yamaha Premium, sunroof, kredit mudah. Test drive door to door. Hubungi Putra Sales Mitsubishi." image="/images/xforce.webp">
@@ -72,21 +76,15 @@ import RelatedProducts from '../components/RelatedProducts.astro';
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Xforce Exceed</td>
-                            <td>CVT</td>
-                            <td class="price-col">Rp 391.500.000</td>
-                        </tr>
-                        <tr>
-                            <td>Xforce Ultimate</td>
-                            <td>CVT</td>
-                            <td class="price-col">Rp 428.500.000</td>
-                        </tr>
-                        <tr style="background: #fff5f5;">
-                            <td><strong>Ultimate Diamond Sense</strong></td>
-                            <td>CVT</td>
-                            <td class="price-col"><strong>Rp 432.500.000</strong></td>
-                        </tr>
+                        {variants.map((v) => (
+                            <tr style={v.name === "Ultimate Diamond Sense" ? "background: #fff5f5;" : undefined}>
+                                <td>{v.name === "Ultimate Diamond Sense" ? <strong>{v.name}</strong> : v.name}</td>
+                                <td>{v.transmission}</td>
+                                <td class="price-col">
+                                    {v.name === "Ultimate Diamond Sense" ? <strong>{v.price}</strong> : v.price}
+                                </td>
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
                 <p style="font-size: 0.82rem; color: var(--m-mid-grey); margin-top: 8px;">* Harga OTR Yogyakarta. Promo tambahan &amp; diskon akhir tahun? Langsung chat/telepon Putra!</p>

@@ -6,7 +6,7 @@ import galleryData from '../data/gallery.json';
 import faqData from '../data/faq.json';
 import leasingData from '../data/leasing.json';
 
-const { cars } = carsData;
+const cars = carsData.cars.filter(car => car.showOnHomepage !== false);
 const galleryItems = galleryData.items || [];
 const faqItems = faqData.items || [];
 const leasingPartners = leasingData.partners || [];
@@ -53,7 +53,14 @@ const faqSchema = {
                 {siteConfig.promo.images && siteConfig.promo.images.length > 0 ? (
                     siteConfig.promo.images.map((img, index) => (
                         <div class="promo-slide" data-index={index}>
-                            <img src={img.src} alt={img.alt || `Promo ${index + 1}`} class="promo-slide-image" loading="lazy" onerror="this.style.display='none'" />
+                            <img 
+                                src={img.src} 
+                                alt={img.alt || `Promo ${index + 1}`} 
+                                class="promo-slide-image" 
+                                loading={index === 0 ? "eager" : "lazy"} 
+                                fetchpriority={index === 0 ? "high" : "low"}
+                                onerror="this.style.display='none'" 
+                            />
                         </div>
                     ))
                 ) : (

@@ -3,6 +3,19 @@ import Layout from '../layouts/Layout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import SidebarCTA from '../components/SidebarCTA.astro';
 import RelatedProducts from '../components/RelatedProducts.astro';
+import carsData from '../data/cars.json';
+
+const car = carsData.cars.find(c => c.id === 'canter');
+const engkelVariants = car?.variants?.filter(v => v.group === '4 Ban') || [];
+const doubleVariants = car?.variants?.filter(v => v.group === '6 Ban') || [];
+
+const getCanterNameParts = (name) => {
+    const parts = name.split(/(\(.*?\))/);
+    if (parts.length > 1) {
+        return { prefix: parts[0].trim(), suffix: parts[1] };
+    }
+    return { prefix: name, suffix: "" };
+};
 ---
 
 <Layout title="Harga Truk Canter Sleman 2026 | Dealer Mitsubishi Fuso Jogja" description="Harga terbaru truk Mitsubishi Canter (Colt Diesel) 4 ban dan 6 ban di Sleman Yogyakarta. Mesin EURO 4 tangguh, irit, jagonya angkutan bisnis." image="/images/canter.webp">
@@ -61,16 +74,16 @@ import RelatedProducts from '../components/RelatedProducts.astro';
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><strong>FE 71</strong> (Standard)</td>
-                            <td>108 PS</td>
-                            <td class="price-col">Rp 395.000.000</td>
-                        </tr>
-                        <tr>
-                            <td><strong>FE 71 Long</strong> (Sasis Panjang)</td>
-                            <td>108 PS</td>
-                            <td class="price-col">Rp 408.000.000</td>
-                        </tr>
+                        {engkelVariants.map((v) => {
+                            const parts = getCanterNameParts(v.name);
+                            return (
+                                <tr>
+                                    <td><strong>{parts.prefix}</strong> {parts.suffix}</td>
+                                    <td>{v.transmission}</td>
+                                    <td class="price-col">{v.price}</td>
+                                </tr>
+                            );
+                        })}
                     </tbody>
                 </table>
 
@@ -85,31 +98,19 @@ import RelatedProducts from '../components/RelatedProducts.astro';
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><strong>FE 74</strong> (Super Speed)</td>
-                            <td>136 PS</td>
-                            <td class="price-col">Rp 445.000.000</td>
-                        </tr>
-                        <tr>
-                            <td><strong>FE 74 Long</strong> (Kargo Ekspedisi)</td>
-                            <td>136 PS</td>
-                            <td class="price-col">Rp 460.000.000</td>
-                        </tr>
-                        <tr style="background: #fff5f5;">
-                            <td><strong>FE 74 HD</strong> (Heavy Duty / Dump)</td>
-                            <td>136 PS</td>
-                            <td class="price-col"><strong>Rp 455.000.000</strong></td>
-                        </tr>
-                        <tr style="background: #fff5f5;">
-                            <td><strong>FE SHDX</strong> (Super Heavy Duty)</td>
-                            <td>136 PS</td>
-                            <td class="price-col"><strong>Rp 468.000.000</strong></td>
-                        </tr>
-                        <tr>
-                            <td><strong>FE 84 G</strong> (Lebar Maksimal)</td>
-                            <td>150 PS</td>
-                            <td class="price-col">Rp 480.000.000</td>
-                        </tr>
+                        {doubleVariants.map((v) => {
+                            const isHighlighted = v.name.includes("HD") || v.name.includes("SHDX");
+                            const parts = getCanterNameParts(v.name);
+                            return (
+                                <tr style={isHighlighted ? "background: #fff5f5;" : undefined}>
+                                    <td><strong>{parts.prefix}</strong> {parts.suffix}</td>
+                                    <td>{v.transmission}</td>
+                                    <td class="price-col">
+                                        {isHighlighted ? <strong>{v.price}</strong> : v.price}
+                                    </td>
+                                </tr>
+                            );
+                        })}
                     </tbody>
                 </table>
             </div>

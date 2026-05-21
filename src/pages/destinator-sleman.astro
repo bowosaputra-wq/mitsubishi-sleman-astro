@@ -3,6 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import SidebarCTA from '../components/SidebarCTA.astro';
 import RelatedProducts from '../components/RelatedProducts.astro';
+import carsData from '../data/cars.json';
+
+const car = carsData.cars.find(c => c.id === 'destinator');
+const variants = car?.variants || [];
 ---
 
 <Layout title="Harga Destinator Sleman 2026 | SUV Premium 7-Seater Turbo – Mitsubishi Sleman" description="Harga dan promo Mitsubishi Destinator terbaru di Sleman Yogyakarta 2026. Mesin 1.5L Turbo 163 PS, 7-Seater Premium, Mitsubishi Connect. Hubungi Putra Sales Mitsubishi." image="/images/destinator.webp">
@@ -80,26 +84,15 @@ import RelatedProducts from '../components/RelatedProducts.astro';
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Destinator GLS</td>
-                            <td>CVT</td>
-                            <td class="price-col">Rp 400.000.000</td>
-                        </tr>
-                        <tr>
-                            <td>Destinator Exceed</td>
-                            <td>CVT</td>
-                            <td class="price-col">Rp 420.000.000</td>
-                        </tr>
-                        <tr>
-                            <td>Destinator Ultimate</td>
-                            <td>CVT</td>
-                            <td class="price-col">Rp 480.000.000</td>
-                        </tr>
-                        <tr style="background: #fff5f5;">
-                            <td><strong>Ultimate Premium</strong></td>
-                            <td>CVT</td>
-                            <td class="price-col"><strong>Rp 510.000.000</strong></td>
-                        </tr>
+                        {variants.map((v) => (
+                            <tr style={v.name === "Ultimate Premium" ? "background: #fff5f5;" : undefined}>
+                                <td>{v.name === "Ultimate Premium" ? <strong>{v.name}</strong> : v.name}</td>
+                                <td>{v.transmission}</td>
+                                <td class="price-col">
+                                    {v.name === "Ultimate Premium" ? <strong>{v.price}</strong> : v.price}
+                                </td>
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
                 <p style="font-size: 0.82rem; color: var(--m-mid-grey); margin-top: 8px;">* Harga OTR Yogyakarta. Promo bunga 0% & Angsuran Ringan? Langsung chat Putra!</p>

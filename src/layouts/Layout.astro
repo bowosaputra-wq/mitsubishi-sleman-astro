@@ -92,17 +92,27 @@ import '../styles/style.css';
     </script>
     
 
-    <!-- Netlify Identity Widget (untuk handle invite/recovery token dari email) -->
-    <script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <!-- Netlify Identity Widget (hanya dimuat dinamis jika di homepage atau ada token invite/recovery) -->
     <script is:inline>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", function(user) {
-          if (!user) {
-            window.netlifyIdentity.on("login", function() {
-              document.location.href = "/admin/";
+      if (
+        window.location.pathname === '/' || 
+        window.location.pathname === '/index.html' || 
+        window.location.hash.includes('_token')
+      ) {
+        const script = document.createElement('script');
+        script.src = 'https://identity.netlify.com/v1/netlify-identity-widget.js';
+        script.onload = () => {
+          if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", function(user) {
+              if (!user) {
+                window.netlifyIdentity.on("login", function() {
+                  document.location.href = "/admin/";
+                });
+              }
             });
           }
-        });
+        };
+        document.head.appendChild(script);
       }
     </script>
 

@@ -115,6 +115,31 @@ collections:
                   label: "Badge"
                   name: "badge"
                   widget: "string"
+              - label: "Tampilkan di Homepage"
+                name: "showOnHomepage"
+                widget: "boolean"
+                default: true
+                required: false
+              - label: "Varian dan Harga"
+                name: "variants"
+                widget: "list"
+                required: false
+                summary: "{{fields.name}} - {{fields.price}}"
+                fields:
+                  - label: "Nama Varian"
+                    name: "name"
+                    widget: "string"
+                  - label: "Transmisi / Spesifikasi"
+                    name: "transmission"
+                    widget: "string"
+                  - label: "Harga OTR"
+                    name: "price"
+                    widget: "string"
+                  - label: "Group Pengelompokan"
+                    name: "group"
+                    widget: "string"
+                    required: false
+                    hint: "Contoh: Dakar, Exceed / GLX, 4 Ban, 6 Ban, 4x2, 6x2, 6x4. Kosongkan jika tidak ada pengelompokan."
 
   - name: "faq"
     label: "FAQ"

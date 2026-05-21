@@ -3,6 +3,20 @@ import Layout from '../layouts/Layout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import SidebarCTA from '../components/SidebarCTA.astro';
 import RelatedProducts from '../components/RelatedProducts.astro';
+import carsData from '../data/cars.json';
+
+const car = carsData.cars.find(c => c.id === 'triton');
+const variants = car?.variants || [];
+
+const getTritonStyle = (name) => {
+    if (name === "Ultimate Double Cab") return "background: #fff5f5;";
+    if (name === "HDX Double Cab") return "background: #f0f7ff;";
+    return undefined;
+};
+
+const isTritonStrong = (name) => {
+    return name === "Ultimate Double Cab" || name === "HDX Double Cab";
+};
 ---
 
 <Layout title="Harga New Triton Sleman 2026 | Kendaraan Niaga 4x4 Tangguh" description="Harga terbaru Mitsubishi New Triton di Sleman Yogyakarta 2026. Pick up 4x4 paling tangguh untuk pertambangan dan perkebunan. Hubungi Putra Sales Mitsubishi." image="/images/triton.webp">
@@ -58,36 +72,19 @@ import RelatedProducts from '../components/RelatedProducts.astro';
                         </tr>
                     </thead>
                     <tbody>
-                        <tr style="background: #fff5f5;">
-                            <td><strong>Ultimate Double Cab</strong></td>
-                            <td>AT (4x4)</td>
-                            <td class="price-col"><strong>Rp 520.000.000</strong></td>
-                        </tr>
-                        <tr>
-                            <td>Exceed Double Cab</td>
-                            <td>MT (4x4)</td>
-                            <td class="price-col">Rp 485.000.000</td>
-                        </tr>
-                        <tr>
-                            <td>GLS Double Cab</td>
-                            <td>MT (4x4)</td>
-                            <td class="price-col">Rp 440.000.000</td>
-                        </tr>
-                        <tr style="background: #f0f7ff;">
-                            <td><strong>HDX Double Cab</strong></td>
-                            <td>MT (4x4)</td>
-                            <td class="price-col"><strong>Rp 425.000.000</strong></td>
-                        </tr>
-                        <tr>
-                            <td>HDX Single Cab</td>
-                            <td>MT (4x4)</td>
-                            <td class="price-col">Rp 375.000.000</td>
-                        </tr>
-                        <tr>
-                            <td>GLX Single Cab</td>
-                            <td>MT (4x2)</td>
-                            <td class="price-col">Rp 295.000.000</td>
-                        </tr>
+                        {variants.map((v) => {
+                            const hasSpecialStyle = getTritonStyle(v.name);
+                            const useStrong = isTritonStrong(v.name);
+                            return (
+                                <tr style={hasSpecialStyle}>
+                                    <td>{useStrong ? <strong>{v.name}</strong> : v.name}</td>
+                                    <td>{v.transmission}</td>
+                                    <td class="price-col">
+                                        {useStrong ? <strong>{v.price}</strong> : v.price}
+                                    </td>
+                                </tr>
+                            );
+                        })}
                     </tbody>
                 </table>
             </div>

@@ -3,6 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import SidebarCTA from '../components/SidebarCTA.astro';
 import RelatedProducts from '../components/RelatedProducts.astro';
+import carsData from '../data/cars.json';
+
+const car = carsData.cars.find(c => c.id === 'xpander-cross');
+const variants = car?.variants || [];
 ---
 
 <Layout title="Harga New Xpander Cross Sleman 2026 | SUV MPV Tangguh – Mitsubishi Sleman" description="Harga terbaru Mitsubishi Xpander Cross di Sleman Yogyakarta 2026. Mesin 1.5L MIVEC, fitur AYC, 6 Airbags, dan desain SUV maskulin. Hubungi Putra Sales Mitsubishi." image="/images/xpander-cross.webp">
@@ -63,16 +67,15 @@ import RelatedProducts from '../components/RelatedProducts.astro';
                         </tr>
                     </thead>
                     <tbody>
-                        <tr style="background: #fff5f5;">
-                            <td><strong>Premium Package</strong></td>
-                            <td>CVT</td>
-                            <td class="price-col"><strong>Rp 377.500.000</strong></td>
-                        </tr>
-                        <tr>
-                            <td>Standar Cross</td>
-                            <td>MT</td>
-                            <td class="price-col">Rp 350.000.000</td>
-                        </tr>
+                        {variants.map((v, index) => (
+                            <tr style={index === 0 ? "background: #fff5f5;" : undefined}>
+                                <td>{index === 0 ? <strong>{v.name}</strong> : v.name}</td>
+                                <td>{v.transmission}</td>
+                                <td class="price-col">
+                                    {index === 0 ? <strong>{v.price}</strong> : v.price}
+                                </td>
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
                 <p style="font-size: 0.82rem; color: var(--m-mid-grey); margin-top: 8px;">* Harga OTR Yogyakarta. Promo DP mulai 10% & bunga ringan. Hubungi Putra untuk hitungan pasti!</p>

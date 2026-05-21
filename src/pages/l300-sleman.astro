@@ -3,6 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import SidebarCTA from '../components/SidebarCTA.astro';
 import RelatedProducts from '../components/RelatedProducts.astro';
+import carsData from '../data/cars.json';
+
+const car = carsData.cars.find(c => c.id === 'l300');
+const variants = car?.variants || [];
 ---
 
 <Layout title="Harga L300 Sleman 2026 | Jagonya Pikap – Mitsubishi Sleman" description="Harga terbaru Mitsubishi Colt L300 di Sleman Yogyakarta 2026. Mesin Euro 4 bertenaga, kapasitas angkut 1 ton, irit BBM. Hubungi Putra Sales Mitsubishi." image="/images/l300.webp">
@@ -63,16 +67,15 @@ import RelatedProducts from '../components/RelatedProducts.astro';
                         </tr>
                     </thead>
                     <tbody>
-                        <tr style="background: #fff5f5;">
-                            <td><strong>Pick Up Flat Deck</strong></td>
-                            <td>Bak Rata</td>
-                            <td class="price-col"><strong>Rp 270.000.000</strong></td>
-                        </tr>
-                        <tr>
-                            <td>Cabin Chassis</td>
-                            <td>Tanpa Bak</td>
-                            <td class="price-col">Rp 265.500.000</td>
-                        </tr>
+                        {variants.map((v, index) => (
+                            <tr style={index === 0 ? "background: #fff5f5;" : undefined}>
+                                <td>{index === 0 ? <strong>{v.name}</strong> : v.name}</td>
+                                <td>{v.transmission}</td>
+                                <td class="price-col">
+                                    {index === 0 ? <strong>{v.price}</strong> : v.price}
+                                </td>
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
                 <p style="font-size: 0.82rem; color: var(--m-mid-grey); margin-top: 8px;">* Harga OTR Yogyakarta. Promo DP mulai Rp 15 Juta-an. Hubungi Putra untuk hitungan pasti!</p>

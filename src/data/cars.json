@@ -1,70 +1,353 @@
 {
   "cars": [
     {
-      "id": "destinator",
+      "price": "Rp 400.000.000",
+      "showOnHomepage": true,
+      "slug": "destinator-sleman.html",
+      "variants": [
+        {
+          "name": "Destinator GLS",
+          "transmission": "CVT",
+          "price": "Rp 400.000.000"
+        },
+        {
+          "name": "Destinator Exceed",
+          "transmission": "CVT",
+          "price": "Rp 420.000.000"
+        },
+        {
+          "name": "Destinator Ultimate",
+          "transmission": "CVT",
+          "price": "Rp 480.000.000"
+        },
+        {
+          "name": "Ultimate Premium",
+          "transmission": "CVT",
+          "price": "Rp 510.000.000"
+        }
+      ],
+      "badges": [
+        "DP mulai 25 jt-an"
+      ],
       "title": "Destinator",
-      "price": "Mulai Rp 400.000.000",
-      "description": "Premium Family SUV. Mesin 1.5L Turbo 163 PS, 5 Drive Modes, Glass Roof, Mitsubishi Connect.",
-      "badges": [
-        "NEW Type"
-      ],
+      "id": "destinator",
       "image": "/images/destinator.webp",
-      "slug": "destinator-sleman.html"
+      "description": "Premium Family SUV. Mesin 1.5L Turbo 163 PS, 5 Drive Modes, Glass Roof, Mitsubishi Connect."
     },
     {
-      "id": "pajero",
-      "title": "Pajero Sport",
       "price": "Rp 606.000.000 - Rp 799.000.000",
-      "description": "King of SUV diesel 181 PS. Mewah, tangguh, dilengkapi fitur keselamatan Diamond Sense.",
-      "badges": [
-        "PROMO BUNGA 0%"
+      "showOnHomepage": true,
+      "slug": "pajero-sport-sleman.html",
+      "variants": [
+        {
+          "name": "Dakar Ultimate",
+          "transmission": "AT 4x4",
+          "price": "Rp 799.000.000",
+          "group": "Dakar"
+        },
+        {
+          "name": "Dakar Ultimate",
+          "transmission": "AT 4x2",
+          "price": "Rp 737.000.000",
+          "group": "Dakar"
+        },
+        {
+          "name": "Dakar (Standar)",
+          "transmission": "AT 4x2",
+          "price": "Rp 684.500.000",
+          "group": "Dakar"
+        },
+        {
+          "name": "Exceed",
+          "transmission": "AT 4x2",
+          "price": "Rp 624.500.000",
+          "group": "Exceed / GLX"
+        },
+        {
+          "name": "Exceed",
+          "transmission": "MT 4x2",
+          "price": "Rp 606.000.000",
+          "group": "Exceed / GLX"
+        },
+        {
+          "name": "GLX",
+          "transmission": "MT 4x4",
+          "price": "Rp 625.500.000",
+          "group": "Exceed / GLX"
+        }
       ],
+      "badges": [
+        "DP 40 jt-an"
+      ],
+      "title": "Pajero Sport",
+      "id": "pajero",
       "image": "/images/pajero-sport.webp",
-      "slug": "pajero-sport-sleman.html"
+      "description": "King of SUV diesel 181 PS. Mewah, tangguh, dilengkapi fitur keselamatan Diamond Sense."
     },
     {
-      "id": "xforce",
-      "title": "New Xforce",
       "price": "Rp 391.500.000 - Rp 433.500.000",
-      "description": "Compact SUV stylish dengan Yamaha Premium Sound, 4 mode berkendara, & fitur canggih.",
-      "badges": [
-        "Si Gesit"
+      "showOnHomepage": true,
+      "slug": "xforce-jogja.html",
+      "variants": [
+        {
+          "name": "Xforce Exceed",
+          "transmission": "CVT",
+          "price": "Rp 391.500.000"
+        },
+        {
+          "name": "Xforce Ultimate",
+          "transmission": "CVT",
+          "price": "Rp 428.500.000"
+        },
+        {
+          "name": "Ultimate Diamond Sense",
+          "transmission": "CVT",
+          "price": "Rp 432.500.000"
+        }
       ],
+      "badges": [
+        "DP 1 jt-an Gaspoll"
+      ],
+      "title": "New Xforce",
+      "id": "xforce",
       "image": "/images/xforce.webp",
-      "slug": "xforce-jogja.html"
+      "description": "Compact SUV stylish dengan Yamaha Premium Sound, 4 mode berkendara, & fitur canggih."
     },
     {
-      "id": "xpander",
-      "title": "New Xpander",
       "price": "Rp 276.000.000 - Rp 350.000.000",
-      "description": "MPV Favorit Keluarga. Kabin senyap, mesin 1.5L MIVEC 105 PS, fitur kenyamanan terbaik.",
+      "showOnHomepage": true,
+      "slug": "xpander-sleman.html",
+      "variants": [
+        {
+          "name": "Ultimate",
+          "transmission": "CVT",
+          "price": "Rp 350.000.000"
+        },
+        {
+          "name": "Ultimate",
+          "transmission": "MT",
+          "price": "Rp 332.500.000"
+        },
+        {
+          "name": "Exceed Tourer",
+          "transmission": "CVT",
+          "price": "Rp 305.000.000"
+        },
+        {
+          "name": "Exceed Tourer",
+          "transmission": "MT",
+          "price": "Rp 293.000.000"
+        },
+        {
+          "name": "GLS",
+          "transmission": "CVT",
+          "price": "Rp 283.500.000"
+        },
+        {
+          "name": "GLS",
+          "transmission": "MT",
+          "price": "Rp 276.000.000"
+        }
+      ],
       "badges": [
-        "Terlaris"
-    ],
+        "DP 5 jt-an"
+      ],
+      "title": "New Xpander",
+      "id": "xpander",
       "image": "/images/xpander.webp",
-      "slug": "xpander-sleman.html"
+      "description": "MPV Favorit Keluarga. Kabin senyap, mesin 1.5L MIVEC 105 PS, fitur kenyamanan terbaik."
     },
     {
-      "id": "canter",
-      "title": "Mitsubishi Canter",
       "price": "Mulai Rp 395.000.000",
-      "description": "Truk 'Kepala Kuning' legendaris. Mesin Euro 4 tangguh & irit, tersedia varian 4 ban dan 6 ban untuk segala bisnis.",
-      "badges": [
-        "Jagonya Bisnis"
+      "showOnHomepage": true,
+      "slug": "canter-sleman.html",
+      "variants": [
+        {
+          "name": "FE 71 (Standard)",
+          "transmission": "108 PS",
+          "price": "Rp 395.000.000",
+          "group": "4 Ban"
+        },
+        {
+          "name": "FE 71 Long (Sasis Panjang)",
+          "transmission": "108 PS",
+          "price": "Rp 408.000.000",
+          "group": "4 Ban"
+        },
+        {
+          "name": "FE 74 (Super Speed)",
+          "transmission": "136 PS",
+          "price": "Rp 445.000.000",
+          "group": "6 Ban"
+        },
+        {
+          "name": "FE 74 Long (Kargo Ekspedisi)",
+          "transmission": "136 PS",
+          "price": "Rp 460.000.000",
+          "group": "6 Ban"
+        },
+        {
+          "name": "FE 74 HD (Heavy Duty / Dump)",
+          "transmission": "136 PS",
+          "price": "Rp 455.000.000",
+          "group": "6 Ban"
+        },
+        {
+          "name": "FE SHDX (Super Heavy Duty)",
+          "transmission": "136 PS",
+          "price": "Rp 468.000.000",
+          "group": "6 Ban"
+        },
+        {
+          "name": "FE 84 G (Lebar Maksimal)",
+          "transmission": "150 PS",
+          "price": "Rp 480.000.000",
+          "group": "6 Ban"
+        }
       ],
+      "badges": [
+        "DP 25 jt + karoseri"
+      ],
+      "title": "Mitsubishi Canter",
+      "id": "canter",
       "image": "/images/canter.webp",
-      "slug": "canter-sleman.html"
+      "description": "Truk 'Kepala Kuning' legendaris. Mesin Euro 4 tangguh & irit, tersedia varian 4 ban dan 6 ban untuk segala bisnis."
     },
     {
-      "id": "l300",
-      "title": "New Colt L300",
-      "price": "Rp 265.500.000 - Rp 270.000.000",
-      "description": "Jagonya pikap legendaris mesin Euro 4. Tersedia varian Flat Deck dan Cab Chassis untuk kebutuhan bisnis Anda.",
-      "badges": [
-        "DP minim"
+      "price": "Rp 270.000.000",
+      "showOnHomepage": true,
+      "slug": "l300-sleman.html",
+      "variants": [
+        {
+          "name": "Pick Up Flat Deck",
+          "transmission": "Bak Rata",
+          "price": "Rp 270.000.000"
+        },
+        {
+          "name": "Cabin Chassis",
+          "transmission": "Tanpa Bak",
+          "price": "Rp 265.500.000"
+        }
       ],
+      "badges": [
+        "DP 3 jt-an"
+      ],
+      "title": "New Colt L300",
+      "id": "l300",
       "image": "/images/l300.webp",
-      "slug": "l300-sleman.html"
+      "description": "Jagonya pikap legendaris mesin Euro 4. Tersedia varian Flat Deck dan Cab Chassis untuk kebutuhan bisnis Anda."
+    },
+    {
+      "price": "Mulai Rp 350.000.000",
+      "showOnHomepage": false,
+      "slug": "xpander-cross-sleman.html",
+      "variants": [
+        {
+          "name": "Premium Package",
+          "transmission": "CVT",
+          "price": "Rp 377.500.000"
+        },
+        {
+          "name": "Standar Cross",
+          "transmission": "MT",
+          "price": "Rp 350.000.000"
+        }
+      ],
+      "badges": [],
+      "title": "New Xpander Cross",
+      "id": "xpander-cross",
+      "image": "/images/xpander-cross.webp",
+      "description": "SUV berkeluarga yang tangguh dengan kenyamanan maksimal dan fitur keselamatan lengkap."
+    },
+    {
+      "price": "Mulai Rp 295.000.000",
+      "showOnHomepage": false,
+      "slug": "triton-sleman.html",
+      "variants": [
+        {
+          "name": "Ultimate Double Cab",
+          "transmission": "AT (4x4)",
+          "price": "Rp 520.000.000"
+        },
+        {
+          "name": "Exceed Double Cab",
+          "transmission": "MT (4x4)",
+          "price": "Rp 485.000.000"
+        },
+        {
+          "name": "GLS Double Cab",
+          "transmission": "MT (4x4)",
+          "price": "Rp 440.000.000"
+        },
+        {
+          "name": "HDX Double Cab",
+          "transmission": "MT (4x4)",
+          "price": "Rp 425.000.000"
+        },
+        {
+          "name": "HDX Single Cab",
+          "transmission": "MT (4x4)",
+          "price": "Rp 375.000.000"
+        },
+        {
+          "name": "GLX Single Cab",
+          "transmission": "MT (4x2)",
+          "price": "Rp 295.000.000"
+        }
+      ],
+      "badges": [],
+      "title": "New Triton",
+      "id": "triton",
+      "image": "/images/triton.webp",
+      "description": "Kendaraan double cabin & single cabin 4x4 paling diandalkan untuk bisnis, pertambangan, dan offroad."
+    },
+    {
+      "price": "Mulai Rp 905.000.000",
+      "showOnHomepage": false,
+      "slug": "fuso-fighter-sleman.html",
+      "variants": [
+        {
+          "name": "FM 65 FS",
+          "transmission": "240 PS",
+          "price": "Rp 905.000.000",
+          "group": "4x2"
+        },
+        {
+          "name": "FM 65 FL",
+          "transmission": "240 PS",
+          "price": "Rp 925.000.000",
+          "group": "4x2"
+        },
+        {
+          "name": "FN 61 FS",
+          "transmission": "240 PS",
+          "price": "Rp 1.050.000.000",
+          "group": "6x2"
+        },
+        {
+          "name": "FN 61 FL",
+          "transmission": "240 PS",
+          "price": "Rp 1.085.000.000",
+          "group": "6x2"
+        },
+        {
+          "name": "FN 62 F HD",
+          "transmission": "270 PS",
+          "price": "Rp 1.250.000.000",
+          "group": "6x4"
+        },
+        {
+          "name": "FN 62 F TH",
+          "transmission": "270 PS",
+          "price": "Rp 1.235.000.000",
+          "group": "6x4"
+        }
+      ],
+      "badges": [],
+      "title": "Fuso Fighter X",
+      "id": "fuso-fighter",
+      "image": "/images/fuso-fighter.webp",
+      "description": "Medium Duty Truck Terbaik di Kelasnya. Menjanjikan daya angkut maksimal untuk ekspedisi wingbox hingga operasional dump armada tambang."
     }
   ]
 }
