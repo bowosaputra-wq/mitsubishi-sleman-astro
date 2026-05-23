@@ -1,18 +1,32 @@
 import type { APIRoute } from 'astro';
 import carsData from '../data/cars.json';
 
+const escapeXml = (unsafe: string) => {
+    return unsafe.replace(/[<>&'"]/g, (c) => {
+        switch (c) {
+            case '<': return '&lt;';
+            case '>': return '&gt;';
+            case '&': return '&amp;';
+            case '\'': return '&apos;';
+            case '"': return '&quot;';
+            default: return c;
+        }
+    });
+};
+
 export const GET: APIRoute = async () => {
     const siteUrl = 'https://mitsubishi-sleman.online';
 
     // Looping data product cars.json
     const urls = carsData.cars.map((car) => {
+        const title = `Mitsubishi ${car.title} Sleman Yogyakarta`;
         return `
     <url>
         <loc>${siteUrl}/${car.slug === '#' ? '' : car.slug}</loc>
         <image:image>
             <image:loc>${siteUrl}${car.image}</image:loc>
-            <image:title>Mitsubishi ${car.title} Sleman Yogyakarta</image:title>
-            <image:caption>${car.description}</image:caption>
+            <image:title>${escapeXml(title)}</image:title>
+            <image:caption>${escapeXml(car.description)}</image:caption>
         </image:image>
     </url>`;
     }).filter(str => str.includes('html')).join("");
