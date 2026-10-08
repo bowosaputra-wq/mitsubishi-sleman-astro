@@ -106,12 +106,12 @@
         },
         {
           "name": "Xforce HEV",
-          "transmission": "Hybrid",
+          "transmission": "CVT",
           "price": "Rp 445.000.000"
         },
         {
           "name": "Xforce HEV Premium",
-          "transmission": "Hybrid",
+          "transmission": "CVT",
           "price": "Rp 470.000.000"
         }
       ],
