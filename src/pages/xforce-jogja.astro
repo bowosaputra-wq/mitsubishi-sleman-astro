@@ -7,46 +7,28 @@ import carsData from '../data/cars.json';
 
 const car = carsData.cars.find(c => c.id === 'xforce');
 const variants = car?.variants || [];
+
+const productSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: 'Mitsubishi XForce 2026',
+    image: 'https://mitsubishi-sleman.online/images/xforce.webp',
+    description: 'Compact SUV premium dengan desain futuristik, audio Yamaha, dan fitur keselamatan Diamond Sense. Tersedia di Sleman Yogyakarta melalui Putra Sales.',
+    brand: { '@type': 'Brand', name: 'Mitsubishi' },
+    offers: variants.map((v) => ({
+        '@type': 'Offer',
+        name: `${v.name} ${v.transmission}`,
+        priceCurrency: 'IDR',
+        price: v.price.replace(/\D/g, ''),
+        availability: 'https://schema.org/InStock',
+        seller: { '@type': 'AutoDealer', name: 'Mitsubishi Sleman – Putra Sales', url: 'https://mitsubishi-sleman.online' }
+    }))
+};
 ---
 
 <Layout title="Harga Xforce Jogja 2026 | SUV Compact Terbaik – Mitsubishi Sleman" description="Harga dan promo Mitsubishi Xforce terbaru di Jogja &amp; Sleman 2026. Audio Yamaha Premium, sunroof, kredit mudah. Test drive door to door. Hubungi Putra Sales Mitsubishi." image="/images/xforce.webp">
     <Fragment slot="head">
-        <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "Mitsubishi XForce 2026",
-      "image": "https://mitsubishi-sleman.online/images/xforce.webp",
-      "description": "Compact SUV premium dengan desain futuristik, audio Yamaha, dan fitur keselamatan Diamond Sense. Tersedia di Sleman Yogyakarta melalui Putra Sales.",
-      "brand": { "@type": "Brand", "name": "Mitsubishi" },
-      "offers": [
-        {
-          "@type": "Offer",
-          "name": "XForce Exceed CVT",
-          "priceCurrency": "IDR",
-          "price": "391500000",
-          "availability": "https://schema.org/InStock",
-          "seller": { "@type": "AutoDealer", "name": "Mitsubishi Sleman – Putra Sales", "url": "https://mitsubishi-sleman.online" }
-        },
-        {
-          "@type": "Offer",
-          "name": "XForce Ultimate CVT",
-          "priceCurrency": "IDR",
-          "price": "428500000",
-          "availability": "https://schema.org/InStock",
-          "seller": { "@type": "AutoDealer", "name": "Mitsubishi Sleman – Putra Sales", "url": "https://mitsubishi-sleman.online" }
-        },
-        {
-          "@type": "Offer",
-          "name": "XForce Ultimate with Diamond Sense",
-          "priceCurrency": "IDR",
-          "price": "432500000",
-          "availability": "https://schema.org/InStock",
-          "seller": { "@type": "AutoDealer", "name": "Mitsubishi Sleman – Putra Sales", "url": "https://mitsubishi-sleman.online" }
-        }
-      ]
-    }
-    </script>
+        <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
     </Fragment>
 
 <Breadcrumb items={[
@@ -77,11 +59,11 @@ const variants = car?.variants || [];
                     </thead>
                     <tbody>
                         {variants.map((v) => (
-                            <tr style={v.name === "Ultimate Diamond Sense" ? "background: #fff5f5;" : undefined}>
-                                <td>{v.name === "Ultimate Diamond Sense" ? <strong>{v.name}</strong> : v.name}</td>
+                            <tr style={v.name === "Xforce HEV Premium" ? "background: #fff5f5;" : undefined}>
+                                <td>{v.name === "Xforce HEV Premium" ? <strong>{v.name}</strong> : v.name}</td>
                                 <td>{v.transmission}</td>
                                 <td class="price-col">
-                                    {v.name === "Ultimate Diamond Sense" ? <strong>{v.price}</strong> : v.price}
+                                    {v.name === "Xforce HEV Premium" ? <strong>{v.price}</strong> : v.price}
                                 </td>
                             </tr>
                         ))}
@@ -146,27 +128,27 @@ const variants = car?.variants || [];
                         <p style="font-size: 0.8rem; margin-top: 5px;">Jet Black Mica</p>
                     </div>
                 </div>
-                <p style="font-size: 0.75rem; color: var(--m-mid-grey); margin-top: 10px;">* Opsi Two-tone tersedia eksklusif pada varian Ultimate Diamond Sense.</p>
+                <p style="font-size: 0.75rem; color: var(--m-mid-grey); margin-top: 10px;">* Opsi Two-tone tersedia eksklusif pada varian Ultimate Premium.</p>
             </div>
 
             <!-- Informasi Estimasi Kredit -->
             <div class="product-card">
                 <h2>Informasi Estimasi Kredit Xforce Jogja</h2>
-                <p style="font-size: 0.9rem; margin-bottom: 1rem; color: var(--m-mid-grey);">Estimasi kredit Xforce Ultimate CVT (OTR Rp 428.500.000), DP 20%:</p>
+                <p style="font-size: 0.9rem; margin-bottom: 1rem; color: var(--m-mid-grey);">Estimasi kredit Xforce Ultimate CVT (OTR Rp 339.000.000), DP 20%:</p>
                 <div class="kredit-grid">
                     <div class="kredit-card">
                         <div class="k-label">DP 20%</div>
-                        <div class="k-value">Rp 85,7 Jt</div>
+                        <div class="k-value">Rp 67,8 Jt</div>
                         <div class="k-sub">Dari Total OTR</div>
                     </div>
                     <div class="kredit-card">
                         <div class="k-label">Cicilan/Bulan</div>
-                        <div class="k-value">~Rp 10,4 Jt</div>
+                        <div class="k-value">~Rp 8,2 Jt</div>
                         <div class="k-sub">Tenor 36 bulan</div>
                     </div>
                     <div class="kredit-card">
                         <div class="k-label">Cicilan/Bulan</div>
-                        <div class="k-value">~Rp 7,6 Jt</div>
+                        <div class="k-value">~Rp 6,0 Jt</div>
                         <div class="k-sub">Tenor 60 bulan</div>
                     </div>
                     <div class="kredit-card">
@@ -207,7 +189,7 @@ const variants = car?.variants || [];
             <SidebarCTA
                 image="/images/xforce.webp"
                 imageAlt="Xforce"
-                price="Rp 391 Juta"
+                price="Rp 339 Juta"
                 waLink="https://wa.me/628974362666?text=Halo%20Putra%2C%20Boleh%20minta%20brosur%20dan%20harga%20promo%20Xforce%20di%20Jogja%3F"
                 waButtonText="Tanya Promo Xforce"
                 ctaId="wa-xforce-cta"

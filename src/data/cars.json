@@ -85,24 +85,34 @@
       "description": "King of SUV diesel 181 PS. Mewah, tangguh, dilengkapi fitur keselamatan Diamond Sense."
     },
     {
-      "price": "Rp 391.500.000 - Rp 433.500.000",
+      "price": "Rp 339.000.000 - Rp 470.000.000",
       "showOnHomepage": true,
       "slug": "xforce-jogja.html",
       "variants": [
         {
-          "name": "Xforce Exceed",
-          "transmission": "CVT",
-          "price": "Rp 391.500.000"
-        },
-        {
           "name": "Xforce Ultimate",
           "transmission": "CVT",
-          "price": "Rp 428.500.000"
+          "price": "Rp 339.000.000"
         },
         {
-          "name": "Ultimate Diamond Sense",
+          "name": "Xforce Exceed",
           "transmission": "CVT",
-          "price": "Rp 432.500.000"
+          "price": "Rp 388.000.000"
+        },
+        {
+          "name": "Xforce Ultimate Premium",
+          "transmission": "CVT",
+          "price": "Rp 424.000.000"
+        },
+        {
+          "name": "Xforce HEV",
+          "transmission": "Hybrid",
+          "price": "Rp 445.000.000"
+        },
+        {
+          "name": "Xforce HEV Premium",
+          "transmission": "Hybrid",
+          "price": "Rp 470.000.000"
         }
       ],
       "badges": [
