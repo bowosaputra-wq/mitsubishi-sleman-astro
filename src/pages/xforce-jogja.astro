@@ -24,11 +24,49 @@ const productSchema = {
         seller: { '@type': 'AutoDealer', name: 'Mitsubishi Sleman – Putra Sales', url: 'https://mitsubishi-sleman.online' }
     }))
 };
+
+const xforceFaq = [
+    {
+        q: "Apa bedanya Xforce HEV dengan Xforce bensin biasa?",
+        a: "Xforce HEV menggunakan teknologi hybrid — kombinasi mesin bensin dan motor listrik — sehingga lebih irit bahan bakar untuk pemakaian harian. Tidak perlu colok listrik: baterai hybrid mengisi sendiri saat mobil dikendarai."
+    },
+    {
+        q: "Berapa DP minimal kredit Xforce di Jogja?",
+        a: "Promo DP ringan mulai 15% dari harga OTR Yogyakarta. Hubungi Putra via WhatsApp untuk simulasi cicilan pasti sesuai tenor dan profil pengajuan Anda."
+    },
+    {
+        q: "Apakah bisa test drive Xforce ke rumah?",
+        a: "Bisa. Layanan test drive door to door tersedia untuk area Sleman dan Yogyakarta pada unit dan jadwal tertentu, termasuk untuk varian HEV."
+    },
+    {
+        q: "KTP luar Jogja apakah bisa proses kredit?",
+        a: "Bisa. Kami melayani pengajuan kredit untuk KTP Jogja dan Jawa Tengah. Konsultasikan dokumen Anda — tim kami bantu sampai approve."
+    },
+    {
+        q: "Apakah unit Xforce ready stock atau inden?",
+        a: "Varian dan warna populer umumnya ready stock. Untuk varian HEV dan warna tertentu bisa inden — hubungi Putra untuk cek stok terbaru di Sleman sebelum Anda datang."
+    },
+    {
+        q: "Pilih Xforce atau Xpander?",
+        a: "Pilih Xforce jika menginginkan SUV compact yang stylish dengan fitur premium seperti Yamaha Sound dan Diamond Sense. Pilih Xpander jika butuh MPV 7-penumpang untuk keluarga besar. Baca artikel perbandingan Xpander vs Xforce di blog kami."
+    }
+];
+
+const xforceFaqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: xforceFaq.map((item) => ({
+        '@type': 'Question',
+        name: item.q,
+        acceptedAnswer: { '@type': 'Answer', text: item.a }
+    }))
+};
 ---
 
-<Layout title="Harga Xforce Jogja 2026 | SUV Compact Terbaik – Mitsubishi Sleman" description="Harga dan promo Mitsubishi Xforce terbaru di Jogja &amp; Sleman 2026. Audio Yamaha Premium, sunroof, kredit mudah. Test drive door to door. Hubungi Putra Sales Mitsubishi." image="/images/xforce.webp">
+<Layout title="Harga Xforce Jogja 2026 | SUV Compact Terbaik – Mitsubishi Sleman" description="Harga dan promo Mitsubishi Xforce terbaru di Jogja &amp; Sleman 2026, termasuk varian hybrid Xforce HEV. Audio Yamaha Premium, sunroof, kredit mudah. Test drive door to door. Hubungi Putra Sales Mitsubishi." image="/images/xforce.webp">
     <Fragment slot="head">
         <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
+        <script type="application/ld+json" set:html={JSON.stringify(xforceFaqSchema)} />
     </Fragment>
 
 <Breadcrumb items={[
@@ -49,6 +87,7 @@ const productSchema = {
             <!-- Harga & Varian -->
             <div class="product-card">
                 <h2>Harga Xforce Jogja 2026</h2>
+                <p style="font-size: 0.92rem; color: var(--m-mid-grey); line-height: 1.6; margin-bottom: 1rem;">Xforce 2026 kini tersedia dalam 5 varian — 3 bensin dan 2 hybrid (HEV). Semua harga di bawah ini adalah OTR Yogyakarta dan dapat berubah mengikuti promo bulan berjalan.</p>
                 <table class="price-table">
                     <thead>
                         <tr>
@@ -181,6 +220,80 @@ const productSchema = {
                         <p style="font-size: 0.92rem; color: var(--m-mid-grey); line-height: 1.5;">Tertinggi di kelasnya. Memberikan rasa tenang saat melewati genangan air hujan atau jalan bergelombang di sekitar Sleman.</p>
                     </div>
                 </div>
+            </div>
+
+            <!-- Apa Itu Xforce HEV -->
+            <div class="product-card">
+                <h2>Apa Itu Xforce HEV?</h2>
+                <p style="font-size: 0.92rem; color: var(--m-mid-grey); line-height: 1.6;">HEV adalah singkatan dari <strong>Hybrid Electric Vehicle</strong>. Xforce HEV menggabungkan mesin bensin dengan motor listrik — hasilnya tarikan tetap responsif tapi konsumsi BBM jauh lebih irit, ideal untuk pemakaian harian dalam kota seperti Jogja.</p>
+                <p style="font-size: 0.92rem; color: var(--m-mid-grey); line-height: 1.6; margin-top: 0.6rem;">Yang penting: <strong>tidak perlu colok listrik</strong>. Baterai hybrid mengisi daya sendiri saat mobil dikendarai, termasuk saat pengereman. Jadi tidak ada kebiasaan baru yang perlu diubah — isi bensin seperti biasa, sisanya diatur otomatis oleh sistem hybrid.</p>
+            </div>
+
+            <!-- Panduan Memilih Varian -->
+            <div class="product-card">
+                <h2>Panduan Memilih Varian Xforce</h2>
+                <p style="font-size: 0.92rem; color: var(--m-mid-grey); line-height: 1.6;">Lima varian, lima karakter. Pilih berdasarkan prioritas Anda:</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 1.2rem;">
+                    <div>
+                        <div style="color: var(--m-red); font-weight: bold; margin-bottom: 5px;">💰 Ultimate — Paling Terjangkau</div>
+                        <p style="font-size: 0.92rem; color: var(--m-mid-grey); line-height: 1.5;">Rp 339 juta. Titik masuk paling hemat untuk merasakan Xforce — cocok jika budget adalah prioritas utama.</p>
+                    </div>
+                    <div>
+                        <div style="color: var(--m-red); font-weight: bold; margin-bottom: 5px;">⚖️ Exceed — Naik Kelas</div>
+                        <p style="font-size: 0.92rem; color: var(--m-mid-grey); line-height: 1.5;">Rp 388 juta. Satu tingkat di atas untuk kelengkapan fitur yang lebih baik — konsultasikan selisih fiturnya dengan Putra.</p>
+                    </div>
+                    <div>
+                        <div style="color: var(--m-red); font-weight: bold; margin-bottom: 5px;">🎨 Ultimate Premium — Paling Stylish</div>
+                        <p style="font-size: 0.92rem; color: var(--m-mid-grey); line-height: 1.5;">Rp 424 juta. Satu-satunya varian dengan opsi warna two-tone eksklusif — untuk yang mengutamakan tampilan.</p>
+                    </div>
+                    <div>
+                        <div style="color: var(--m-red); font-weight: bold; margin-bottom: 5px;">🌿 HEV — Hybrid Paling Efisien</div>
+                        <p style="font-size: 0.92rem; color: var(--m-mid-grey); line-height: 1.5;">Rp 445 juta. Untuk yang mengutamakan irit BBM — teknologi hybrid bensin + listrik tanpa perlu ngecas.</p>
+                    </div>
+                    <div>
+                        <div style="color: var(--m-red); font-weight: bold; margin-bottom: 5px;">👑 HEV Premium — Flagship</div>
+                        <p style="font-size: 0.92rem; color: var(--m-mid-grey); line-height: 1.5;">Rp 470 juta. Kasta tertinggi Xforce: efisiensi hybrid dipadukan dengan fitur terlengkap.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kelebihan & Pertimbangan -->
+            <div class="product-card">
+                <h2>Kelebihan & Hal yang Perlu Dipertimbangkan</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 1.2rem;">
+                    <div>
+                        <div style="color: #2b8a3e; font-weight: bold; margin-bottom: 8px;">✅ Kelebihan</div>
+                        <ul style="font-size: 0.92rem; color: var(--m-mid-grey); line-height: 1.7; padding-left: 1.1rem; margin: 0;">
+                            <li>Yamaha Premium Sound 8-speaker — hiburan kelas konser</li>
+                            <li>Diamond Sense (ADAS) untuk keselamatan aktif</li>
+                            <li>Ground clearance 222 mm, tertinggi di kelasnya</li>
+                            <li>4 mode berkendara: Normal, Wet, Gravel, Mud</li>
+                            <li>Kini ada pilihan hybrid (HEV) yang lebih irit</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div style="color: #e67700; font-weight: bold; margin-bottom: 8px;">⚖️ Perlu Dipertimbangkan</div>
+                        <ul style="font-size: 0.92rem; color: var(--m-mid-grey); line-height: 1.7; padding-left: 1.1rem; margin: 0;">
+                            <li>Varian HEV lebih mahal ±Rp 21–46 juta dari padanan bensinnya — sesuaikan dengan jarak tempuh harian agar penghematan BBM terasa</li>
+                            <li>Rentang harga lebar (Rp 339–470 juta) — tentukan budget dan prioritas (gaya, fitur, atau irit) sebelum memilih varian</li>
+                            <li>Opsi warna two-tone hanya tersedia di Ultimate Premium</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Xforce -->
+            <div class="product-card">
+                <h2>Pertanyaan Umum tentang Xforce di Jogja</h2>
+                <div style="margin-top: 1rem;">
+                    {xforceFaq.map((item) => (
+                        <div style="margin-bottom: 1.1rem;">
+                            <h3 style="font-size: 1rem; margin-bottom: 0.35rem;">{item.q}</h3>
+                            <p style="font-size: 0.92rem; color: var(--m-mid-grey); line-height: 1.6; margin: 0;">{item.a}</p>
+                        </div>
+                    ))}
+                </div>
+                <p style="font-size: 0.85rem; color: var(--m-mid-grey); margin-top: 0.5rem;">Ada pertanyaan lain? <a href="https://wa.me/628974362666?text=Halo%20Putra%2C%20saya%20mau%20tanya%20tentang%20Xforce." target="_blank" rel="noopener">Chat Putra langsung via WhatsApp</a> — fast respon.</p>
             </div>
 
         </div>
